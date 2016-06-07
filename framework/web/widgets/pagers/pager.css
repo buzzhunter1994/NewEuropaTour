@@ -1,0 +1,45 @@
+ul.yiiPager
+{
+	font-size:11px;
+	border:0;
+	margin:0;
+	padding:0;
+	line-height:100%;
+	display:inline;
+}
+
+ul.yiiPager li
+{
+	display:inline;
+}
+
+ul.yiiPager a:link,
+ul.yiiPager a:visited
+{
+    -webkit-box-shadow: 0 0 6px #9aafe5;
+    box-shadow: 0 0 6px #9aafe5;
+    border-radius:4px;
+    background: #FFFFFF;
+	font-weight:bold;
+	color:#000000;
+	padding:5px 8px;
+	text-decoration:none;
+}
+
+ul.yiiPager .page a
+{
+	font-weight:normal;
+}
+
+ul.yiiPager .selected a
+{
+	background:#5A7BAD;
+	color:#FFFFFF;
+	font-weight:bold;
+}
+
+ul.yiiPager .first,
+ul.yiiPager .last
+{
+	display:none;
+}

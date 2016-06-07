@@ -1,0 +1,12 @@
+User-Agent: *
+Disallow: /*?
+Disallow: /cgi-bin
+Disallow: /gallery
+Disallow: /js
+Disallow: /framework
+Disallow: /assets
+Disallow: /upload
+Disallow: /protected
+Disallow: /images
+Disallow: /login
+Disallow: /admin

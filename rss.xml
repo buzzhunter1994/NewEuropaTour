@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+	<channel>
+		<title>Название RSS ленты</title>
+		<link>Ссылка на сайт ленты (ваш сайт)</link>
+		<description>Краткое описание ленты (3-4 предложения)</description>
+		<item>
+		   <title>Название новости</title>
+		   <link>Ссылка на новость в интернете</link>
+		  <description>Сокращенный текст (описание) статьи, новости</description>
+		  <author>Имя автора</author>
+		  <pubDate>Дата публикации новости</pubDate>
+		</item>
+		<item>
+		  <title>Название статьи </title>
+		  <link>Ссылка на статью, новость в интернете</link>
+		  <description>Описание</description>
+		  <author>Имя автора</author>
+		  <pubDate>Дата публикации</pubDate>
+		</item>
+	</channel>
+</rss>

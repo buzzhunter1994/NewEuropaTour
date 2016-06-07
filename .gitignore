@@ -1,0 +1,10 @@
+# IntellijIdea files
+*.iml
+.idea
+out
+assets/*
+!assets/.gitignore
+protected/runtime/*
+!protected/runtime/.gitignore
+protected/data/*.db
+themes/classic/views/
