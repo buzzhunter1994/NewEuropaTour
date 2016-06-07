@@ -452,7 +452,7 @@ input[type="color"] {
 @media (min-width: 992px) {
     #main_menu_button {display: none;}
     .main-menu > li > a {
-        font-size: 16px;
+        font-size: 15px;
     }
     .tour-search-form {
         margin: 15px 10px;
