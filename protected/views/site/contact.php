@@ -33,7 +33,7 @@
             </div>
             <div class="routeBox">
                 <h3>Фасад офиса</h3>
-                <img src="/css/images/fasad_n44.jpg" class="img-responsive">
+                <img src="/images/fasad_n44.jpg" class="img-responsive">
             </div>
         </div>
 	</div>

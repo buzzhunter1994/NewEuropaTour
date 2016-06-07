@@ -51,7 +51,7 @@
         <h2>Сезон 2016</h2>
     </header>
     <div class="row">
-        <div class="col-sm-4 col-md-1-5 col-lg-1-5">
+        <div class="col-sm-3 col-md-3 col-lg-3">
             <div class="tour-thumb">
                 <img src="http://dummyimage.com/130x130/3069b3/fff.png" class="img-responsive img-circle" alt="Responsive image">
                 <h3 class="styled-header">Отдых на море!</h3>
@@ -59,7 +59,7 @@
                 <a class="btn btn-default btn-block" href="#" role="button">Подробнее</a>
             </div>
         </div>
-        <div class="col-sm-4 col-md-1-5 col-lg-1-5">
+        <div class="col-sm-3 col-md-3 col-lg-3">
             <div class="tour-thumb">
                 <img src="http://dummyimage.com/130x130/3069b3/fff.png" class="img-responsive img-circle" alt="Responsive image">
                 <h3 class="styled-header">Отдых на море!</h3>
@@ -67,7 +67,7 @@
                 <a class="btn btn-default btn-block" href="#" role="button">Подробнее</a>
             </div>
         </div>
-        <div class="col-sm-4 col-md-1-5 col-lg-1-5">
+        <div class="col-sm-3 col-md-3 col-lg-3">
             <div class="tour-thumb">
                 <img src="http://dummyimage.com/130x130/3069b3/fff.png" class="img-responsive img-circle" alt="Responsive image">
                 <h3 class="styled-header">Отдых на море!</h3>
@@ -75,15 +75,7 @@
                 <a class="btn btn-default btn-block" href="#" role="button">Подробнее</a>
             </div>
         </div>
-        <div class="col-sm-4 col-md-1-5 col-lg-1-5">
-            <div class="tour-thumb">
-                <img src="http://dummyimage.com/130x130/3069b3/fff.png" class="img-responsive img-circle" alt="Responsive image">
-                <h3 class="styled-header">Отдых на море!</h3>
-                <p>Комфортные экскурсионные туры по Европе с отдыхом на море в Италии, Испании и Черногории</p>
-                <a class="btn btn-default btn-block" href="#" role="button">Подробнее</a>
-            </div>
-        </div>
-        <div class="col-sm-4 col-md-1-5 col-lg-1-5">
+        <div class="col-sm-3 col-md-3 col-lg-3">
             <div class="tour-thumb">
                 <img src="http://dummyimage.com/130x130/3069b3/fff.png" class="img-responsive img-circle" alt="Responsive image">
                 <h3 class="styled-header">Отдых на море!</h3>
@@ -100,31 +92,26 @@
 			<h2>Наши новости</h2>
 		</header>	
 		<div class="row">
-			<div class="col-sm-4 col-md-1-5 col-lg-1-5 blog-item">
+			<div class="col-sm-3 col-md-3 col-lg-3 blog-item">
 				<date>21.04.2016</date>
 				<h3>Праздник середины лета в Швеции!</h3>
 				<p>В этом году Мидсоммар, или Праздник середины лета, шведы будут отмечать 23 июня. Предлагаем и вам повеселиться на этом шведском празднике, отправившись с нами в тур по Скандинавии S2 Скандинавия комфорт 18 июня.</p>
 			</div>
-			<div class="col-sm-4 col-md-1-5 col-lg-1-5 blog-item">
+			<div class="col-sm-3 col-md-3 col-lg-3 blog-item">
 				<date>21.04.2016</date>
 				<h3>Праздник середины лета в Швеции!</h3>
 				<p>В этом году Мидсоммар, или Праздник середины лета, шведы будут отмечать 23 июня. Предлагаем и вам повеселиться на этом шведском празднике, отправившись с нами в тур по Скандинавии S2 Скандинавия комфорт 18 июня.</p>
 			</div>
-			<div class="col-sm-4 col-md-1-5 col-lg-1-5 blog-item">
+			<div class="col-sm-3 col-md-3 col-lg-3 blog-item">
 				<date>21.04.2016</date>
 				<h3>Праздник середины лета в Швеции!</h3>
 				<p>В этом году Мидсоммар, или Праздник середины лета, шведы будут отмечать 23 июня. Предлагаем и вам повеселиться на этом шведском празднике, отправившись с нами в тур по Скандинавии S2 Скандинавия комфорт 18 июня.</p>
 			</div>
-			<div class="col-sm-4 col-md-1-5 col-lg-1-5 blog-item">
+			<div class="col-sm-3 col-md-3 col-lg-3 blog-item">
 				<date>21.04.2016</date>
 				<h3>Праздник середины лета в Швеции!</h3>
 				<p>В этом году Мидсоммар, или Праздник середины лета, шведы будут отмечать 23 июня. Предлагаем и вам повеселиться на этом шведском празднике, отправившись с нами в тур по Скандинавии S2 Скандинавия комфорт 18 июня.</p>
 			</div>
-			<div class="col-sm-4 col-md-1-5 col-lg-1-5 blog-item">
-				<date>21.04.2016</date>
-				<h3>Праздник середины лета в Швеции!</h3>
-				<p>В этом году Мидсоммар, или Праздник середины лета, шведы будут отмечать 23 июня. Предлагаем и вам повеселиться на этом шведском празднике, отправившись с нами в тур по Скандинавии S2 Скандинавия комфорт 18 июня.</p>
-			</div>		
 		</div>
 	</div>
 </div>
@@ -134,36 +121,30 @@
 			<h2>Интересное в нашем блоге</h2>
 		</header>
 		<div class="row">
-			<div class="col-sm-4 col-md-1-5 col-lg-1-5 blog-item">
+			<div class="col-sm-3 col-md-3 col-lg-3 blog-item">
 				<date>21.04.2016</date>
 				<h3>Праздник середины лета в Швеции!</h3>
 				<img src="http://dummyimage.com/250x115/3069b3/fff.png" class="img-responsive" alt="Responsive image">
 				<p>В этом году Мидсоммар, или Праздник середины лета, шведы будут отмечать 23 июня. Предлагаем и вам повеселиться на этом шведском празднике, отправившись с нами в тур по Скандинавии S2 Скандинавия комфорт 18 июня.</p>
 			</div>
-			<div class="col-sm-4 col-md-1-5 col-lg-1-5 blog-item">
+            <div class="col-sm-3 col-md-3 col-lg-3 blog-item">
 				<date>21.04.2016</date>
 				<h3>Праздник середины лета в Швеции!</h3>
 				<img src="http://dummyimage.com/250x115/3069b3/fff.png" class="img-responsive" alt="Responsive image">
 				<p>В этом году Мидсоммар, или Праздник середины лета, шведы будут отмечать 23 июня. Предлагаем и вам повеселиться на этом шведском празднике, отправившись с нами в тур по Скандинавии S2 Скандинавия комфорт 18 июня.</p>
 			</div>
-			<div class="col-sm-4 col-md-1-5 col-lg-1-5 blog-item">
+            <div class="col-sm-3 col-md-3 col-lg-3 blog-item">
 				<date>21.04.2016</date>
 				<h3>Праздник середины лета в Швеции!</h3>
 				<img src="http://dummyimage.com/250x115/3069b3/fff.png" class="img-responsive" alt="Responsive image">
 				<p>В этом году Мидсоммар, или Праздник середины лета, шведы будут отмечать 23 июня. Предлагаем и вам повеселиться на этом шведском празднике, отправившись с нами в тур по Скандинавии S2 Скандинавия комфорт 18 июня.</p>
 			</div>
-			<div class="col-sm-4 col-md-1-5 col-lg-1-5 blog-item">
+            <div class="col-sm-3 col-md-3 col-lg-3 blog-item">
 				<date>21.04.2016</date>
 				<h3>Праздник середины лета в Швеции!</h3>
 				<img src="http://dummyimage.com/250x115/3069b3/fff.png" class="img-responsive" alt="Responsive image">
 				<p>В этом году Мидсоммар, или Праздник середины лета, шведы будут отмечать 23 июня. Предлагаем и вам повеселиться на этом шведском празднике, отправившись с нами в тур по Скандинавии S2 Скандинавия комфорт 18 июня.</p>
 			</div>
-			<div class="col-sm-4 col-md-1-5 col-lg-1-5 blog-item">
-				<date>21.04.2016</date>
-				<h3>Праздник середины лета в Швеции!</h3>
-				<img src="http://dummyimage.com/250x115/3069b3/fff.png" class="img-responsive" alt="Responsive image">
-				<p>В этом году Мидсоммар, или Праздник середины лета, шведы будут отмечать 23 июня. Предлагаем и вам повеселиться на этом шведском празднике, отправившись с нами в тур по Скандинавии S2 Скандинавия комфорт 18 июня.</p>
-			</div>		
 		</div>
 	</div>
 </div>

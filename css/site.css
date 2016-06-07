@@ -11,6 +11,21 @@
     font-weight: normal;
     font-style: normal;
 }
+[class^="icon-"],
+[class*=" icon-"] {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    *margin-right: .3em;
+    line-height: 14px;
+    vertical-align: text-top;
+}
+
+[class^="icon-"]:last-child,
+[class*=" icon-"]:last-child {
+    *margin-left: 0;
+}
+
 .p_r {
     position: relative;
 }
@@ -45,7 +60,6 @@ body {
 
 h2 {
     margin: 0 0 12px 0;
-    padding: 12px 0 8px 0;
     font-family: 'PFDinTextCondPro-Medium';
     font-size: 24px;
     text-transform: uppercase;
@@ -94,6 +108,21 @@ a:focus, select:focus{
     background-size: cover;
     padding-bottom: 10px;
 }
+.menuBlock{margin-bottom:30px;}
+.menuBlock img{max-width:100%;min-width:100%;}
+.menuBlock h4{background:#007eff;margin:0;padding:8px;text-align:center;font:400 24px 'PFDinTextCondPro-Medium', sans-serif;text-transform: uppercase;}
+.menuBlock h4 a{color: #ffffff;text-decoration: none;}
+.menuBlock ul{list-style:none;margin:0;padding:0;}
+.menuBlock ul li{display:block;}
+.menuBlock ul li + li{border-top:1px dotted #dadada;}
+.menuBlock ul li a{color:#2b2b2b;display:block;font:bold 16px 'PFDinTextCondPro-Thin', sans-serif;padding:10px 8px;text-decoration:none;text-transform:uppercase;}
+.menuBlock ul li a:hover{background:#ebf2f8;color:#000;}
+.menuBlock ul li a i {float:left;}
+.menuBlock ul li a span{display:block;margin-left:22px;}
+.menuBlock ul li a i.icon-viArrow{background:url('viAccordionArrow.png') no-repeat 0 0;height:20px;}
+.menuBlock ul ul{background:#fff;margin-bottom:5px;}
+.menuBlock ul ul li a{color:#444;display:block;font:bold 16px 'PFDinTextCondPro-Thin', sans-serif;padding:10px 6px;text-decoration:none;text-transform:none;}
+
 #main_menu_button{
     border: none;
     width: 48px;
@@ -106,7 +135,7 @@ a:focus, select:focus{
 }
 .main-menu-wrap {
     position: relative;
-    height: 60px;
+    height: 61px;
     margin: 0px 50px 10px 50px;
     background: url('menu-bg.png') repeat-x;
 }
@@ -619,9 +648,14 @@ input[type="color"] {
 }
 
 .tour-thumb .btn, .tour-thumb .btn:hover, .tour-thumb .btn:active, .tour-thumb .btn:focus {
+    display: block;
     max-width: 170px;
+    color: #000000;
     background: #ffd200;
+    text-align: center;
+    text-decoration: none;
     text-transform: uppercase;
+    padding: 3px 0;
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     font-weight: bold;
@@ -635,12 +669,12 @@ input[type="color"] {
 .tour-thumb .btn:active {
     -webkit-box-shadow: none;
     box-shadow: none;
-    margin-top: 13px;
+    margin-top: 15px;
     border-bottom: none;
 }
 
 .block {
-	margin: 30px 0;
+	margin: 20px 0;
 }
 
 .block-grey {
@@ -701,7 +735,7 @@ input[type="color"] {
 }
 
 .blog-item h3 + p{
-     margin-top: 20px;
+     margin-top: 10px;
 }
 
 .blog-item p, .blog-item date{	
