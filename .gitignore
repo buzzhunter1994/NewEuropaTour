@@ -4,6 +4,7 @@
 out
 assets/*
 !assets/.gitignore
+!assets/.gitkeep
 protected/runtime/*
 !protected/runtime/.gitignore
 protected/data/*.db
