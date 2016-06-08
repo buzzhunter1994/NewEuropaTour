@@ -1,5 +1,9 @@
 <?php
 $this->pageTitle='Питання-відповіді';
+$this->breadcrumbs = array(
+    'Главная'=> Yii::app()->homeUrl,
+    'Питання-відповіді',
+);
 ?>
 <div class="container">
     <h2>Питання-відповіді</h2>

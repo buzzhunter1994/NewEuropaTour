@@ -40,10 +40,10 @@
                             <li><a href="/blog">Блог</a></li>
                             <li class="dropdown"><a href="#">Туристам <span class="caret"></span></a>
                                 <ul>
-                                    <li><a href="#">Інформація з відправлення</a></li>
-                                    <li><a href="#">Способи оплати</a></li>
-                                    <li><a href="#">Правила</a></li>
-                                    <li><a href="#">Скидки та сертифікати</a></li>
+                                    <li><a href="/tourist_info">Інформація з відправлення</a></li>
+                                    <li><a href="/payment">Способи оплати</a></li>
+                                    <li><a href="/rules">Правила</a></li>
+                                    <li><a href="/discount">Скидки та сертифікати</a></li>
                                 </ul>
                             </li>
                             <li><a href="/agency">Агенствам</a></li>

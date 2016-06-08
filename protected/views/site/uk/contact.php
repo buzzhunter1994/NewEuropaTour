@@ -1,5 +1,11 @@
+<?php
+$this->pageTitle='Контакти';
+$this->breadcrumbs = array(
+    'Главная'=> Yii::app()->homeUrl,
+    'Контакти',
+);
+?>
 <div class="container">
-
     <h2 class="styled-header">Офисы ООО "neweuropatour"</h2>
 	<div class="row">
         <div class="col-sm-6 contactBox">

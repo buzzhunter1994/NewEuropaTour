@@ -1,5 +1,5 @@
 <?php
-$this->pageTitle = CHtml::encode($model->title) . ' | Новости';
+$this->pageTitle = CHtml::encode($model->title) . ' | Блог';
 ?>
 <div class="container">
     <div class="row">

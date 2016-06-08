@@ -14,6 +14,10 @@ class SiteController extends Controller
 	{
 		$this->render('/site/index',array());
 	}
+    public function actionSearch($q)
+    {
+        $this->render('/site/search',array('q'=> $q));
+    }
 	public function actionError()
 	{
 		if($error=Yii::app()->errorHandler->error)

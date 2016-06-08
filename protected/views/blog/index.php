@@ -1,8 +1,8 @@
 <?php
-$this->pageTitle='Новости';
+$this->pageTitle='Блог';
 $this->breadcrumbs = array(
     'Главная'=> Yii::app()->homeUrl,
-    'Новости',
+    'Блог',
 );
 ?>
 <div class="container">
@@ -20,7 +20,7 @@ $this->breadcrumbs = array(
         </div>
         <div class="col-lg-9 col-md-8 ">
 
-            <h2>Новости</h2>
+            <h2>Блог</h2>
             <?php
             $this->widget('zii.widgets.CListView', array(
                 'dataProvider'=>$dataProvider,

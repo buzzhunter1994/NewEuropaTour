@@ -263,9 +263,12 @@ return array (
   '{n} terabyte|{n} terabytes' => '{n} терабайт|{n} терабайта|{n} терабайтів|{n} терабайта',
   '{widget} cannot find the view "{view}".' => 'Віджет {widget} не може знайти представлення "{view}".',
     'name' => 'Ім\'я',
-    'email' => 'E-mail',
+    'email' => 'ВашE-mail',
     'message' => 'Повідомлення',
     'send' => 'Надіслати',
+    'city' => 'Місто',
     'feedback' => 'Зворотній зв\'язок',
     'details' => 'Детальніше...',
+    'introduce' => 'Представьтесь',
+    'from' => 'Звідки Ви?',
 );
