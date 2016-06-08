@@ -7,5 +7,6 @@ assets/*
 !assets/.gitkeep
 protected/runtime/*
 !protected/runtime/.gitignore
+!protected/runtime/.gitkeep
 protected/data/*.db
 themes/classic/views/
