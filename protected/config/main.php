@@ -28,9 +28,6 @@ return array(
             'defaults'  => array(              //default settings for all editable elements
                'emptytext' => '- порожньо -'
             )
-        ),    
-        'counter' => array(
-            'class' => 'UserCounter',
         ),
         'bootstrap'=>array(
             'class'=>'bootstrap.components.Bootstrap',
@@ -47,10 +44,13 @@ return array(
             'showScriptName' => false,
 			'urlFormat'=>'path',
 			'rules'=>array(
+				'/country/<name:.*>' =>'countries/view',
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 				'/post/<url:.*>' =>'news/view',
+
+
                 '/search' =>'site/search',
 				'/about' =>'site/page/view/about',
 				'/agency' =>'site/page/view/agency',

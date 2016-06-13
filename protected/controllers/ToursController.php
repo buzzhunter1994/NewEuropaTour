@@ -2,12 +2,15 @@
 class ToursController extends Controller
 {
 	public $layout='//layouts/main';
-	public function actionView()
+	public function actionView($id)
 	{
-		$this->render('view');
+		$tour=Tours::model()->findByPk($id);
+		$this->render('view', array('tour'=>$tour));
 	}
 	public function actionIndex()
 	{
-		$this->render('index');
+		$countries = Countries::model()->findAll();
+		$tourThemes = TourThemes::model()->findAll();
+		$this->render('index', array('countries' => $countries, 'tourThemes' => $tourThemes));
 	}
 }
