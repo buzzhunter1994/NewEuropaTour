@@ -119,7 +119,7 @@ class CLinkPager extends CBasePager
 		if(!isset($this->htmlOptions['id']))
 			$this->htmlOptions['id']=$this->getId();
 		if(!isset($this->htmlOptions['class']))
-			$this->htmlOptions['class']='yiiPager';
+			$this->htmlOptions['class']='yiiPager pagination';
 	}
 
 	/**

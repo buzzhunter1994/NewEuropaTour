@@ -28,10 +28,10 @@ class Posts extends CActiveRecord
 			'id' => 'ID',
 			'title' => 'Заголовок',
 			'text' => 'Текст',
-			'catg' => 'Категорія',
+			'catg' => 'Категория',
 			'tags' => 'Теги',
 			'url' => 'Url',
-			'is_news' => 'Новина',
+			'is_news' => 'Новость',
 		);
 	}
 	public function search()
@@ -46,7 +46,7 @@ class Posts extends CActiveRecord
 		return new CActiveDataProvider($this, array(
              'criteria'=>$criteria,
                  'pagination'=>array(
-                     'pageSize'=>3,
+                     'pageSize'=>10,
                   ),
                   'sort'=>array(
                       'defaultOrder'=>array(

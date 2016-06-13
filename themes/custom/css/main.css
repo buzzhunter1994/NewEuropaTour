@@ -100,8 +100,7 @@ input[type="text"],input[type="password"],select{
 }
 .control-label{
     margin:5px 0;
-    font-weight: bold;
-    display:block;
+    text-align: left;
 }
 .form-actions {
     padding: 19px 20px 20px;

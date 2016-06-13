@@ -7,6 +7,16 @@ class ToursController extends Controller
 		$tour=Tours::model()->findByPk($id);
 		$this->render('view', array('tour'=>$tour));
 	}
+	public function actionTheme($id)
+	{
+		$tour = Tours::model()->findByPk($id);
+		$this->render('view', array('tour'=>$tour));
+	}
+	public function actionOrder($id)
+	{
+		$tour = Tours::model()->findByPk($id);
+		$this->render('view', array('tour'=>$tour));
+	}
 	public function actionIndex()
 	{
 		$countries = Countries::model()->findAll();

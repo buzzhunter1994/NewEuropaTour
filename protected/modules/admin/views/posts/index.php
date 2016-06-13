@@ -1,9 +1,9 @@
-<h1>Управління статтями</h1>
+<h1>Управление статьями</h1>
 <?php 
 $this->menu=array(
-	array('label'=>'Створення статті', 'url'=>array('create')),
+	array('label'=>'Создание статьи', 'url'=>array('create')),
 );
-$this->pageTitle = 'Управління статтями';
+$this->pageTitle = 'Управление статтями';
 $this->widget('bootstrap.widgets.TbGridView',array(
 	'id'=>'posts-grid',
     'type'=>'striped bordered condensed hover',
@@ -15,7 +15,6 @@ $this->widget('bootstrap.widgets.TbGridView',array(
         array( 
               'class' => 'editable.EditableColumn',
               'name' => 'title',
-              'header'=>'Заголовок',
               'editable' => array(
                   'type'     => 'text',
                   'url'      => $this->createUrl('posts/updater'),
@@ -25,13 +24,12 @@ $this->widget('bootstrap.widgets.TbGridView',array(
         array(
             'class'=>'DToggleColumn',
             'name'=>'is_news',
-            'header'=>'Новина',
             'linkUrl'=>'Yii::app()->controller->createUrl("toggle", array("id"=>$data->id, "attribute"=>"is_news"))',
             'onImageUrl' => Yii::app()->request->baseUrl . '/css/images/yes.png',
             'offImageUrl' => Yii::app()->request->baseUrl . '/css/blank.gif',
             //'confirmation'=>'Изменить статус статьи?',
-            'filter'=>array(1=>'Так', 0=>'Ні'),
-            'titles'=>array(1=>'Так', 0=>'Ні'),           
+            'filter'=>array(1=>'Да', 0=>'Нет'),
+            'titles'=>array(1=>'Да', 0=>'Нет'),           
         ),  
         array(
             'class'=>'bootstrap.widgets.TbButtonColumn',

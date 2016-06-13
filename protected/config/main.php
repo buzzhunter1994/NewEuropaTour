@@ -26,7 +26,7 @@ return array(
             'form'      => 'bootstrap',        //form style: 'bootstrap', 'jqueryui', 'plain' 
             'mode'      => 'popup',            //mode: 'popup' or 'inline'  
             'defaults'  => array(              //default settings for all editable elements
-               'emptytext' => '- порожньо -'
+               'emptytext' => 'пусто'
             )
         ),
         'bootstrap'=>array(

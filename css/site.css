@@ -263,7 +263,7 @@ a:focus, select:focus{
 .sampleTour .h1{display:table-cell;width:100%;}
 .sampleTour .h1 a{color:#4078A3;display:inline;}
 .sampleTour .h1 a:hover{color:#23557c;}
-
+.sampleTour .scheduler {margin: 10px 15px; }
 .lColPayment{}
 .lColPayment h4{background:#4d7ea7;color:#fff;}
 .lColPayment .contentBox{padding:10px; font-size: 12px;}

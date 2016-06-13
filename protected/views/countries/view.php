@@ -40,7 +40,7 @@ $this->breadcrumbs = array(
                                 <div class="descriptionCol">
                                     <div class="caption">
                                         <div class="h1">
-                                            <a href="/tours/c1430b56.html">{$tour->title}</a>
+                                            <a href="/tours/{$tour->id}">{$tour->title}</a>
                                             &nbsp;<small>{$tour->days}</small>
                                         </div>
                                     </div>
@@ -50,7 +50,7 @@ $this->breadcrumbs = array(
                                 <div class="tagsBox clearfix">
                                     <div class="part">
                                         <em>Тематика тура:</em>
-                                            <span class="label label-tag">{$tour->theme->name}</span>
+                                        <span class="label label-tag">{$tour->theme->name}</span>
                                     </div>
                                 </div>
                             </div>

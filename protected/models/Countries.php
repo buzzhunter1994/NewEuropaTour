@@ -8,7 +8,7 @@ class Countries extends CActiveRecord
 	public function rules()
 	{
 		return array(
-			array('name, short_name, iso, top', 'required'),
+			array('name, short_name, iso, top, title', 'required'),
 			array('top', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>32),
 			array('short_name', 'length', 'max'=>5),
@@ -43,6 +43,13 @@ class Countries extends CActiveRecord
 		$criteria->compare('top',$this->top);
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
+			'pagination'=>array(
+				'pageSize'=>30,
+			),
+			'sort'=>array(
+				'defaultOrder'=>array(
+					'id'=>""
+				))
 		));
 	}
 	public static function model($className=__CLASS__)

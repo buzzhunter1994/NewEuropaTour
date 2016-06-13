@@ -1,9 +1,16 @@
 <?php
 class Controller extends CController
 {
-    public $layout = 'main';
+    public $layout = '/layouts/main';
     public $menu = array();
     public $breadcrumbs = array();
+    public function storage_value($key){
+        $model = Storage::model()->find('`key`=:url', array('url' => $key));
+        if ($model===null)
+            return '';
+        else
+            return $model->value;
+    }
     public function translit_title($string)
     {
         $converter = array(

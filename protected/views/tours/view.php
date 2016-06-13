@@ -3,7 +3,7 @@ $this->pageTitle=$tour->country->name .': '. $tour->title .' '. $tour->route;
 $this->breadcrumbs = array(
     'Главная'=> Yii::app()->homeUrl,
     'Туры' => array('/tours'),
-    $tour->country->name => array('/tours/countries/'.$tour->country->short_name),
+    $tour->country->name => array('/country/'.$tour->country->short_name),
     $tour->title
 );
 ?>

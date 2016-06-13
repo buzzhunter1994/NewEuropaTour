@@ -12,7 +12,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="shortcut icon" href="favicon.png" />
-	<link rel="stylesheet" href="/themes/custom/libs/bootstrap/bootstrap.min.css" />
     <?php Yii::app()->bootstrap->register(); ?>
 	<link rel="stylesheet" href="/themes/custom/libs/font-awesome-4.2.0/css/font-awesome.min.css" />
 	<link rel="stylesheet" href="/themes/custom/libs/fancybox/jquery.fancybox.css" />
@@ -22,14 +21,14 @@
 	<link rel="stylesheet" href="/themes/custom/css/media.css" />
 </head>
 <body>
-<?php if(!Yii::app()->user->isGuest){ /*hidden-md hidden-lg hidden-sm */?>
+<?php if(!Yii::app()->user->isGuest){ ?>
 <button id="main_menu_button" class="button offcanvas"><i class="fa fa-bars"></i></button>
     <header class="top_header">
         <nav class="main_menu">
             <ul>
-                <li><a href="/admin/categories">Категорії</a></li>
-                <li><a href="/admin/posts">Статті</a></li>
-                <li><a href="/admin/default/logout">Вихід</a></li>
+                <li><a href="/admin/countries">Страны</a></li>
+                <li><a href="/admin/posts">Статьи</a></li>
+                <li><a href="/admin/default/logout">Виход</a></li>
             </ul>                     
         </nav>		
         <?php                                           
