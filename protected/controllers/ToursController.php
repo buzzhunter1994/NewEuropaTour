@@ -14,8 +14,9 @@ class ToursController extends Controller
 	}
 	public function actionOrder($id)
 	{
-		$tour = Tours::model()->findByPk($id);
-		$this->render('view', array('tour'=>$tour));
+		$trip = Trips::model()->findByPk($id);
+		$anotherDates = Trips::model();
+		$this->render('order', array('trip'=>$trip, 'tour'=>$trip->tour));
 	}
 	public function actionIndex()
 	{

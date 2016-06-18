@@ -71,7 +71,7 @@
             {
             ?>
             <div class="row">
-                <div class="col-lg-8 col-md-8 col-sm-12 hidden-xs hidden-sm">
+                <div class="col-lg-9 col-md-8 hidden-xs hidden-sm">
                     <div id="slider">
                         <div>
                             <a href="#"><img src="http://i.ytimg.com/vi/TRWRX3_AuzA/maxresdefault.jpg" alt="" /></a>
@@ -91,7 +91,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="col-lg-3 col-md-4 col-sm-12">
                     <div class="tour-search">
                         <h3>Быстрый подбор туров</h3>
                         <form method="GET" name="search_tours" id="search_tours" action="/tours/search/" class="tour-search-form">
