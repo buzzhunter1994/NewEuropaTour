@@ -14,7 +14,7 @@ function formatState(state) {
     var originalOption = state.element;
     if (!state.id) { return state.text; }
     var $state = $(
-        '<span><img src="css/flags/' + $(originalOption).data('iso') + '.png" class="img-flag" /> ' + state.text + '</span>'
+        '<span><img src="/css/flags/' + $(originalOption).data('iso') + '.png" class="img-flag" /> ' + state.text + '</span>'
     );
     return $state;
 };
@@ -50,22 +50,6 @@ function empty_list(obj) {
     obj.empty();
     obj.select2('destroy');
     obj.append("<option value=''></option>");
-}
-
-
-function word_forms(cnt) {
-    var ost = cnt % 10;
-    var word_form;
-
-    if (ost==1 && cnt!=11) {
-        word_form = '�����������';
-    } else if (ost<5 && ost!=0 && cnt<5) {
-        word_form = '�����������';
-    } else {
-        word_form = '�����������';
-    }
-
-    return word_form;
 }
 
 function _list1_change(selected_value) {

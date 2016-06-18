@@ -978,30 +978,6 @@ input[type="color"] {
     background-position-x: -177px;
 }
 
-.control-group:after {
-     content: ".";
-     display: block;
-     height: 0;
-     clear: both;
-     visibility: hidden;
- }
-
-.control-group + .control-group {
-    margin-top: 10px;
-}
-
-.control-label {
-    float: left;
-    width: 30%;
-    font-weight: bold;
-    margin-top: 9px;
-    padding-right: 9px;
-    text-align: right;
-}
-.control-label + .controls {
-    float: left;
-    width: 70%;
-}
 .controls p {
     margin: 0 0 10px 0;
     text-align: justify;
