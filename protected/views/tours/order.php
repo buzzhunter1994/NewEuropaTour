@@ -26,7 +26,7 @@ $this->breadcrumbs = array(
             <div class="date clearfix">
                 <em><?=$tour->days?></em>
             </div>
-            <div class="date">
+            <div class="date clearfix">
                 <em>Дата заезда:</em> <span class="label label-date dateGreen"><?=$trip->selfDate()?></span>
                 <div class="dateSelectionBut" id="dateSelectionBut">Выбрать другую</div>
             </div>
@@ -48,7 +48,11 @@ $this->breadcrumbs = array(
         <div class="caption clearfix">
             <div class="selectCol">
                 <select id="users_cnt" name="users_cnt">
-                    <option value="1" selected>1 турист</option><option value="2" >2 туриста</option><option value="3" >3 туриста</option><option value="4" >4 туриста</option><option value="5" >5 и более туристов</option>
+                    <option value="1" selected>1 турист</option>
+                    <option value="2" >2 туриста</option>
+                    <option value="3" >3 туриста</option>
+                    <option value="4" >4 туриста</option>
+                    <option value="5" >5 и более туристов</option>
                 </select>
             </div>
             <h4>введите Данные туристa</h4>
@@ -60,56 +64,31 @@ $this->breadcrumbs = array(
         <table class="passportTbl" id="users_lt5">
             <tr>
                 <th>Ф.И.О. (рус.)</th>
-                <th>Фамилия Имя (лат.)</th>
                 <th>Дата рождения</th>
-                <th>Серия и номер паспорта</th>
-                <th>Дата выдачи паспорта</th>
-                <th>Срок действия паспорта</th>
-                <th>Виза</th>
                 <th></th>
             </tr>
 
             <tr id="user1">
                 <td class="form td_fio"><input name="fio_1" id="fio_1" type="text" placeholder="Фамилия Имя Отчество" value=""></td>
-                <td class="form td_fio"><input name="fiolat_1" id="fiolat_1" type="text" placeholder="Латинскими буквами как в паспорте" value=""></td>
                 <td class="form td_birthday"><input name="birthday_1" id="birthday_1" class="birthday" type="text" placeholder="дд.мм.гггг" value=""></td>
-                <td class="form td_passport"><input name="passport_1" id="passport_1" type="text" placeholder="Серия и номер паспорта" value=""></td>
-                <td class="form td_birthday"><input name="passportdate1_1" id="passportdate1_1" class="pass1" type="text" placeholder="дд.мм.гггг" value=""></td>
-                <td class="form td_birthday"><input name="passportdate2_1" id="passportdate2_1" class="pass2" type="text" placeholder="дд.мм.гггг" value=""></td>
-                <td class="form td_visa"><input name="visa_1" type="checkbox" id="visa_1" value="1" ><label for="visa_1">виза нужна</label></td>
                 <td class="form td_icon"><i class="icon-trash" id="icon-trash-1" style="display:none;"></i></td>
             </tr>
 
             <tr id="user2" style="display:none;">
                 <td class="form td_fio"><input name="fio_2" id="fio_2" type="text" placeholder="Фамилия Имя Отчество" value=""></td>
-                <td class="form td_fio"><input name="fiolat_2" id="fiolat_2" type="text" placeholder="Латинскими буквами как в паспорте" value=""></td>
                 <td class="form td_birthday"><input name="birthday_2" id="birthday_2" class="birthday" type="text" placeholder="дд.мм.гггг" value=""></td>
-                <td class="form td_passport"><input name="passport_2" id="passport_2" type="text" placeholder="Серия и номер паспорта" value=""></td>
-                <td class="form td_birthday"><input name="passportdate1_2" id="passportdate1_2" class="pass1" type="text" placeholder="дд.мм.гггг" value=""></td>
-                <td class="form td_birthday"><input name="passportdate2_2" id="passportdate2_2" class="pass2" type="text" placeholder="дд.мм.гггг" value=""></td>
-                <td class="form td_visa"><input name="visa_2" type="checkbox" id="visa_2" value="1" ><label for="visa_2">виза нужна</label></td>
                 <td class="form td_icon"><i class="icon-trash" id="icon-trash-2" style="display:none;"></i></td>
             </tr>
 
             <tr id="user3" style="display:none;">
                 <td class="form td_fio"><input name="fio_3" id="fio_3" type="text" placeholder="Фамилия Имя Отчество" value=""></td>
-                <td class="form td_fio"><input name="fiolat_3" id="fiolat_3" type="text" placeholder="Латинскими буквами как в паспорте" value=""></td>
                 <td class="form td_birthday"><input name="birthday_3" id="birthday_3" class="birthday" type="text" placeholder="дд.мм.гггг" value=""></td>
-                <td class="form td_passport"><input name="passport_3" id="passport_3" type="text" placeholder="Серия и номер паспорта" value=""></td>
-                <td class="form td_birthday"><input name="passportdate1_3" id="passportdate1_3" class="pass1" type="text" placeholder="дд.мм.гггг" value=""></td>
-                <td class="form td_birthday"><input name="passportdate2_3" id="passportdate2_3" class="pass2" type="text" placeholder="дд.мм.гггг" value=""></td>
-                <td class="form td_visa"><input name="visa_3" type="checkbox" id="visa_3" value="1" ><label for="visa_3">виза нужна</label></td>
                 <td class="form td_icon"><i class="icon-trash" id="icon-trash-3" style="display:none;"></i></td>
             </tr>
 
             <tr id="user4" style="display:none;">
                 <td class="form td_fio"><input name="fio_4" id="fio_4" type="text" placeholder="Фамилия Имя Отчество" value=""></td>
-                <td class="form td_fio"><input name="fiolat_4" id="fiolat_4" type="text" placeholder="Латинскими буквами как в паспорте" value=""></td>
                 <td class="form td_birthday"><input name="birthday_4" id="birthday_4" class="birthday" type="text" placeholder="дд.мм.гггг" value=""></td>
-                <td class="form td_passport"><input name="passport_4" id="passport_4" type="text" placeholder="Серия и номер паспорта" value=""></td>
-                <td class="form td_birthday"><input name="passportdate1_4" id="passportdate1_4" class="pass1" type="text" placeholder="дд.мм.гггг" value=""></td>
-                <td class="form td_birthday"><input name="passportdate2_4" id="passportdate2_4" class="pass2" type="text" placeholder="дд.мм.гггг" value=""></td>
-                <td class="form td_visa"><input name="visa_4" type="checkbox" id="visa_4" value="1" ><label for="visa_4">виза нужна</label></td>
                 <td class="form td_icon"><i class="icon-trash" id="icon-trash-4" style="display:none;"></i></td>
             </tr>
 

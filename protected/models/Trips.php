@@ -11,12 +11,12 @@ class Trips extends CActiveRecord
 	public function rules()
 	{
 		return array(
-			array('id', 'required'),
-			array('id, tour_id, seat_1_1, seat_1_2, seat_1_3, seat_1_4, seat_2_1, seat_2_2, seat_2_3, seat_2_4, seat_3_1, seat_3_2, seat_3_3, seat_3_4, seat_4_1, seat_4_2, seat_4_3, seat_4_4, seat_5_1, seat_5_2, seat_6_1, seat_6_2, seat_7_1, seat_7_2, seat_7_3, seat_7_4, seat_8_1, seat_8_2, seat_8_3, seat_8_4, seat_9_1, seat_9_2, seat_9_3, seat_9_4, seat_10_1, seat_10_2, seat_10_3, seat_10_4, seat_11_1, seat_11_2, seat_11_3, seat_11_4, seat_12_1, seat_12_2, seat_12_3, seat_12_4, seat_12_5', 'numerical', 'integerOnly'=>true),
+			array('tour_id, seat_1_1, seat_1_2, seat_1_3, seat_1_4, seat_2_1, seat_2_2, seat_2_3, seat_2_4, seat_3_1, seat_3_2, seat_3_3, seat_3_4, seat_4_1, seat_4_2, seat_4_3, seat_4_4, seat_5_1, seat_5_2, seat_6_1, seat_6_2, seat_7_1, seat_7_2, seat_7_3, seat_7_4, seat_8_1, seat_8_2, seat_8_3, seat_8_4, seat_9_1, seat_9_2, seat_9_3, seat_9_4, seat_10_1, seat_10_2, seat_10_3, seat_10_4, seat_11_1, seat_11_2, seat_11_3, seat_11_4, seat_12_1, seat_12_2, seat_12_3, seat_12_4, seat_12_5', 'numerical', 'integerOnly'=>true),
 			array('price', 'numerical'),
 			array('name', 'length', 'max'=>10),
+			array('description', 'length', 'max'=>255),
 			array('date_start, date_arrive', 'safe'),
-			array('id, tour_id, name, date_start, date_arrive, price, seat_1_1, seat_1_2, seat_1_3, seat_1_4, seat_2_1, seat_2_2, seat_2_3, seat_2_4, seat_3_1, seat_3_2, seat_3_3, seat_3_4, seat_4_1, seat_4_2, seat_4_3, seat_4_4, seat_5_1, seat_5_2, seat_6_1, seat_6_2, seat_7_1, seat_7_2, seat_7_3, seat_7_4, seat_8_1, seat_8_2, seat_8_3, seat_8_4, seat_9_1, seat_9_2, seat_9_3, seat_9_4, seat_10_1, seat_10_2, seat_10_3, seat_10_4, seat_11_1, seat_11_2, seat_11_3, seat_11_4, seat_12_1, seat_12_2, seat_12_3, seat_12_4, seat_12_5', 'safe', 'on'=>'search'),
+			array('id, tour_id, name, description, date_start, date_arrive, price, seat_1_1, seat_1_2, seat_1_3, seat_1_4, seat_2_1, seat_2_2, seat_2_3, seat_2_4, seat_3_1, seat_3_2, seat_3_3, seat_3_4, seat_4_1, seat_4_2, seat_4_3, seat_4_4, seat_5_1, seat_5_2, seat_6_1, seat_6_2, seat_7_1, seat_7_2, seat_7_3, seat_7_4, seat_8_1, seat_8_2, seat_8_3, seat_8_4, seat_9_1, seat_9_2, seat_9_3, seat_9_4, seat_10_1, seat_10_2, seat_10_3, seat_10_4, seat_11_1, seat_11_2, seat_11_3, seat_11_4, seat_12_1, seat_12_2, seat_12_3, seat_12_4, seat_12_5', 'safe', 'on'=>'search'),
 		);
 	}
 	public function relations()
@@ -31,6 +31,7 @@ class Trips extends CActiveRecord
 			'id' => 'ID',
 			'tour_id' => 'Tour',
 			'name' => 'Name',
+			'description' => 'Description',
 			'date_start' => 'Date Start',
 			'date_arrive' => 'Date Arrive',
 			'price' => 'Price',
@@ -151,6 +152,7 @@ class Trips extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('tour_id',$this->tour_id);
 		$criteria->compare('name',$this->name,true);
+		$criteria->compare('description',$this->description,true);
 		$criteria->compare('date_start',$this->date_start,true);
 		$criteria->compare('date_arrive',$this->date_arrive,true);
 		$criteria->compare('price',$this->price);

@@ -18,7 +18,8 @@ $this->breadcrumbs = array(
                             &nbsp;<small><?=$tour->days?></small>
                         </h1>
                         <div class="price">
-                            <span>от <strong class="woturusl" data-content="19&nbsp;632&nbsp;450&nbsp;руб. (€850)">19&nbsp;632&nbsp;450&nbsp;руб.</strong></span>&lt;</div>
+                            <span>от <strong class="woturusl" data-content="19&nbsp;632&nbsp;450&nbsp;руб. (€850)">19&nbsp;632&nbsp;450&nbsp;руб.</strong></span>&lt;
+                        </div>
                     </div>
                     <div class="route"><?=$tour->route?></div>
                     <div class="icon iconBus"></div>
@@ -34,14 +35,56 @@ $this->breadcrumbs = array(
                             <span class="label label-tag"><?=$tour->country->name?></span>
                         </span>
                     </div>
+                    <?
+                    /*
                     <div class="part">
                         <span class="takeMap"><i class="fa fa-file-text-o"></i><a class="dashed" href="#" id="countryDocsOpen">Документы для открытия визы</a></span> <a href="tourist/multivizy/" class="red">возможность получения мультивизы</a>
                     </div>
+                    */
+                    ?>
+                </div>
+                <div class="bookingTable fastBookingTable" id="bookingTable">
+                    <table class="table table-condensed table-hover">
+                        <thead>
+                        <tr class="header">
+                            <th></th>
+                            <th>Даты заездов</th>
+                            <th>Наличие мест</th>
+                            <th class="desc">Описание</th>
+                            <th>Базовая цена</th>
+                            <th class="printhide"></th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+
+                        <?
+                        foreach($tour->trips as $trip)
+                        {
+                            $freeSeats = count($trip->freeSeats());
+                            $selfDate = $trip->selfDate();
+                            $seats_count = $freeSeats . Yii::t('yii', ' seat| seats', $freeSeats);
+                        ?>
+                        <tr>
+                            <td></td>
+                            <td><span class="hidden-label">Дата заезда:</span><?=$selfDate?></td>
+                            <td class="space"><span class="hidden-label">Места:</span><a href="#" class="places dashed-green" title="Показать наличие мест"><?=$seats_count?></a></td>
+                            <td class="desc"><span class="hidden-label">Описание:</span>
+                                <?=$trip->description?>
+                            </td>
+                            <td class="price"><span class="hidden-label">Цена:</span>
+                                <span class="turusl" data-content="<?=$trip->price?>"><?=$trip->price?></span>
+                            </td>
+                            <td class="printhide"><a class="btn butn butnGreen butnSm" href="/tours/order/id/<?=$trip->id?>">Заказать тур</a></td>
+                        </tr>
+                        <? } ?>
+
+                        </tbody>
+                    </table>
                 </div>
                 <div class="scheduler">
                     <h2>Программа автобусного тура</h2>
                 <?=$tour->program?>
-                <p><a href="/tours/order/?tour_id=c1430b56">Заказать тур</a></p>
                 </div>
             </div>
         </div>

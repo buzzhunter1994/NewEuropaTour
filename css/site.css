@@ -257,6 +257,27 @@ a:focus, select:focus{
 .sampleTour .tagsBox .takeMap a{margin-left:5px;text-decoration:underline; color: #ef9724;}
 .sampleTour .tagsBox .takeMap a:hover{text-decoration:none;}
 .sampleTour .tagsBox .takeMap a.dashed{border-bottom: 1px dashed #ef9724;}
+
+.sampleTour .bookingTable{margin:20px 8px;}
+.sampleTour .bookingTable th{color:#333;}
+.sampleTour .bookingTable th, .sampleTour .bookingTable td{border-top:1px dotted #ccc;border-bottom:1px dotted #ccc;min-height:32px;text-align:center;vertical-align:middle;}
+.sampleTour .bookingTable th.desc{text-align:left;}
+.sampleTour .bookingTable tr:last-child td{border-bottom:1px dotted #ccc;}
+.sampleTour .bookingTable td.space{color:#019a1d;font-weight:700;text-align:center;}
+.sampleTour .bookingTable td.desc{text-align:left;}
+.sampleTour .bookingTable td.price{color:#019a1d;font:700 18px/1em 'Open Sans Condensed', arial, sans-serif;}
+.sampleTour .bookingTable td.price a{font-size:12px;}
+.sampleTour .bookingTable .noFree td{background:#ffbcbc;opacity:.3;}
+/*.sampleTour .bookingTable .noFree td.space{background:#ffebeb;color:#ef242b;opacity:1;}*/
+.sampleTour .bookingTable .noFree td.space{color:#ef242b;}
+.sampleTour .bookingTable .lastFree td.space{color:#ef9724;}
+.sampleTour .bookingTable td.space a{color:#019a1d;}
+.sampleTour .bookingTable .noFree td.space a{color:#ef242b;}
+.sampleTour .bookingTable .lastFree td.space a{color:#ef9724;}
+.sampleTour .bookingTable .btn{float:right;}
+.hidden-label{display:none;padding-right:5px;}
+
+
 .sampleTour .h1, .searchTourResults .sampleTour .descriptionCol .h1 a{font:700 15px/1.1em 'PFDinTextPro-Light', arial, sans-serif;padding:10px 0 25px 0;}
 .sampleTour .h1{display:table-cell;width:100%;}
 .sampleTour .h1 a{color:#4078A3;display:inline;}
@@ -985,6 +1006,15 @@ input[type="color"] {
     margin-left: 10px;
     position: relative;
 }
+.dateSelectionBut:hover{color:#23557c;}
+.dateSelectionBut:after{background:url("dateSelectorArr.png") no-repeat;content:"";display:none;height:10px;width:19px;position:absolute;bottom:-15px;left:50%;margin-left:-9px;}
+.dateSelectionBut.active:after{display:block;}
+.dateSelection {
+    background: #f2fbff;
+    border: 1px solid #cedce3;
+    margin: 10px 0;
+    padding: 10px;
+}
 .passportForm{background:#eee;border:1px solid #ccc;margin-bottom:20px;}
 .passportForm .caption{padding:10px;}
 .passportForm .caption .selectCol{float:left;width:33.3%;}
@@ -1004,7 +1034,7 @@ input[type="color"] {
 .passportTbl td{padding:10px 2px;vertical-align:middle;}
 .passportTbl tr + tr td{border-top:1px solid #ccc;}
 .passportTbl td:first-child{padding-left:10px;}
-.passportTbl td:last-child{padding-right:10px;}
+.passportTbl td:last-child{padding:1%;}
 .passportTbl td .icon-trash{background:url('vi-blue-glyphicons-halflings.png') -456px 0;cursor:pointer;}
 .passportTbl td .icon-trash:hover{opacity:.7;}
 .passportTbl td.td_fio{width:23%;}

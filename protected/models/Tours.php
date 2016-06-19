@@ -21,6 +21,7 @@ class Tours extends CActiveRecord
 		return array(
 			'country' => array(self::BELONGS_TO, 'Countries', 'country_id'),
 			'theme' => array(self::BELONGS_TO, 'TourThemes', 'theme_id'),
+			'trips' => array(self::HAS_MANY, 'Trips', 'tour_id'),
 		);
 	}
 	public function attributeLabels()
