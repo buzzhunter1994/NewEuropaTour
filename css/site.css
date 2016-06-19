@@ -977,3 +977,74 @@ input[type="color"] {
     margin: 0 0 10px 0;
     text-align: justify;
 }
+.dateSelectionBut {
+    border-bottom: 1px dotted #4078A3;
+    color: #4078A3;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 10px;
+    position: relative;
+}
+.passportForm{background:#eee;border:1px solid #ccc;margin-bottom:20px;}
+.passportForm .caption{padding:10px;}
+.passportForm .caption .selectCol{float:left;width:33.3%;}
+.passportForm .caption select{height:36px;margin:0;padding:9px 4px;}
+.passportForm .caption h4{float:left;margin:0;padding:9px 0;text-align:center;width:33.3%;}
+.passportForm .caption .msg{float:left;font:300 14px/18px sans-serif;padding:9px 0;text-align:right;width:33.3%;}
+.passportForm .caption .msg .alerter{color:#f00;}
+.passportForm .groupContent{border-top:1px solid #ccc;padding:10px;}
+.passportForm .groupContent .importantNotice{margin:0 0 10px;}
+.passportForm .groupContent textarea{margin:0;width:100%;
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+}
+.passportTbl{width:100%;}
+.passportTbl th{border-bottom:1px solid #ccc;color:#000;font:300 16px/1em sans-serif;padding:10px 2px;text-align:center;}
+.passportTbl td{padding:10px 2px;vertical-align:middle;}
+.passportTbl tr + tr td{border-top:1px solid #ccc;}
+.passportTbl td:first-child{padding-left:10px;}
+.passportTbl td:last-child{padding-right:10px;}
+.passportTbl td .icon-trash{background:url('vi-blue-glyphicons-halflings.png') -456px 0;cursor:pointer;}
+.passportTbl td .icon-trash:hover{opacity:.7;}
+.passportTbl td.td_fio{width:23%;}
+.passportTbl td.td_birthday{width:9%;}
+.passportTbl td.td_passport{width:14%;}
+.passportTbl td.td_visa{width:9%;}
+.passportTbl td.td_icon{width:4%;}
+
+.bus-map{border:1px solid #ddd;margin-bottom:20px;padding:20px;}
+.bus-map h4{margin-top:0;text-align:center;}
+.busWrapper{height:250px;margin:40px 0 20px;overflow:auto;text-align:center;width:100%;}
+.bus-scroll{display:inline-block;min-width:780px;}
+.bus{background:#fbf5df;border:4px solid #7dbfe1;border-radius:15px;display:inline-block;height:191px;white-space:nowrap;box-sizing: content-box;}
+.busCol{float:left;height:191px;padding:0 4px;width:43px;box-sizing: content-box;}
+.busRow{height:30px;margin:6px 0;width:43px;}
+.busRow:first-child{margin-top:8px;}
+.busRow:last-child{margin-bottom:8px;}
+.rowSeat{background:#d5cdaf url('busSeat.png') no-repeat;}
+.rowSeat.empty{background-color:#87da80;cursor:pointer;}
+.rowSeat.booked{background-color:#e76969;}
+.rowSeat.reserve{background-color:#e4ba4a;}
+.rowSeat.choice{background-color:#2fb8ff;cursor:pointer;}
+.rowSeat.booked2{background:#E76969 url('busSeat2.png') no-repeat;}
+.rowSeat.reserve2{background:#e4ba4a url('busSeat2.png') no-repeat;}
+.rowSeat.choice:hover, .rowSeat.empty:hover{opacity:.7;}
+.rowNum{color:#887f5f;font:700 18px/30px sans-serif;text-align:center;}
+.rowBar{background:url('busBar.png') no-repeat 50% 50%;height:64px;}
+.rowTV{background:url('busTV.png') no-repeat 0 50%;}
+.rowSeat i{position:relative;top:6px;left:9px}
+.busCol.busFront{background:url('busFront.png') no-repeat 0 50%;border-radius:0 13px 13px 0;float:left;height:191px;padding:0;width:97px;}
+.exitCol{position:relative;}
+.exitCol:after{color:#000;content:"ВХОД";text-align:center;width:51px;position:absolute;bottom:-30px;left:0;}
+.busLegend{margin-bottom:20px;text-align:center;}
+.busLegend .legendContent{display:inline-block;}
+.busLegend h5{color:#000;display:inline-block;float:left;margin:0 10px 0 0;}
+.legendItem{display:inline-block;float:left;font-size:11px;line-height:36px;margin:0 10px;}
+.legendItem .rowSeat{background-image:url('legendSeat-sm.png');background-size:contain;cursor:default;float:left;height:20px;width:29px;margin-right:5px;}
+.legendItem .rowSeat:hover{opacity:1;}
+.legendItem .rowSeat.booked2{background-image:url('legendSeat2-sm.png');}
+.legendItem .rowSeat.reserve2{background-image:url('legendSeat2-sm.png');}
+.legendItem .rowSeat i{position:relative;top:-8px;left:5px}
+.bus-map .msg{color:#777;font-size:11px;line-height:13px;}
+.bus-map .msg p:last-child{margin:0;}

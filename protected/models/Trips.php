@@ -1,6 +1,9 @@
 <?php
 class Trips extends CActiveRecord
 {
+	const SEAT_RESERVED = 1;
+	const SEAT_BUSY = 2;
+	private $seats;
 	public function tableName()
 	{
 		return '{{trips}}';
@@ -77,6 +80,70 @@ class Trips extends CActiveRecord
 			'seat_12_4' => 'Seat 12 4',
 			'seat_12_5' => 'Seat 12 5',
 		);
+	}
+	public function selfDate(){
+		return date("d.m - ", strtotime($this->date_start)) . date("d.m.Y", strtotime($this->date_arrive));
+	}
+	public function seats(){
+		$this->seats['1_1'] = $this->seat_1_1;
+		$this->seats['1_2'] = $this->seat_1_2;
+		$this->seats['1_3'] = $this->seat_1_3;
+		$this->seats['1_4'] = $this->seat_1_4;
+		$this->seats['2_1'] = $this->seat_2_1;
+		$this->seats['2_2'] = $this->seat_2_2;
+		$this->seats['2_3'] = $this->seat_2_3;
+		$this->seats['2_4'] = $this->seat_2_4;
+		$this->seats['3_1'] = $this->seat_3_1;
+		$this->seats['3_2'] = $this->seat_3_2;
+		$this->seats['3_3'] = $this->seat_3_3;
+		$this->seats['3_4'] = $this->seat_3_4;
+		$this->seats['4_1'] = $this->seat_4_1;
+		$this->seats['4_2'] = $this->seat_4_2;
+		$this->seats['4_3'] = $this->seat_4_3;
+		$this->seats['4_4'] = $this->seat_4_4;
+		$this->seats['5_1'] = $this->seat_5_1;
+		$this->seats['5_2'] = $this->seat_5_2;
+		$this->seats['6_1'] = $this->seat_6_1;
+		$this->seats['6_2'] = $this->seat_6_2;
+		$this->seats['7_1'] = $this->seat_7_1;
+		$this->seats['7_2'] = $this->seat_7_2;
+		$this->seats['7_3'] = $this->seat_7_3;
+		$this->seats['7_4'] = $this->seat_7_4;
+		$this->seats['8_1'] = $this->seat_8_1;
+		$this->seats['8_2'] = $this->seat_8_2;
+		$this->seats['8_3'] = $this->seat_8_3;
+		$this->seats['8_4'] = $this->seat_8_4;
+		$this->seats['9_1'] = $this->seat_9_1;
+		$this->seats['9_2'] = $this->seat_9_2;
+		$this->seats['9_3'] = $this->seat_9_3;
+		$this->seats['9_4'] = $this->seat_9_4;
+		$this->seats['10_1'] = $this->seat_10_1;
+		$this->seats['10_2'] = $this->seat_10_2;
+		$this->seats['10_3'] = $this->seat_10_3;
+		$this->seats['10_4'] = $this->seat_10_4;
+		$this->seats['11_1'] = $this->seat_11_1;
+		$this->seats['11_2'] = $this->seat_11_2;
+		$this->seats['11_3'] = $this->seat_11_3;
+		$this->seats['11_4'] = $this->seat_11_4;
+		$this->seats['12_1'] = $this->seat_12_1;
+		$this->seats['12_2'] = $this->seat_12_2;
+		$this->seats['12_3'] = $this->seat_12_3;
+		$this->seats['12_4'] = $this->seat_12_4;
+		$this->seats['12_5'] = $this->seat_12_5;
+		return $this->seats;
+	}
+	public function otherDates(){
+		return self::model()->findAll(array(
+			'condition'=>'id <> :id AND tour_id = :tour_id',
+			'params'=>array(':id'=>$this->id, ':tour_id'=>$this->tour_id),
+		));
+	}
+	public function free($var)
+	{
+		return ($var != self::SEAT_RESERVED) && ($var != self::SEAT_BUSY);
+	}
+	public function freeSeats(){
+		return array_filter(self::seats(), "self::free");
 	}
 	public function search()
 	{

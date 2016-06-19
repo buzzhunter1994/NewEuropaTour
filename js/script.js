@@ -45,6 +45,37 @@ function init_list3() {
     });
 }
 
+function change_users_cnt() {
+    var cnt = $(this).val();
+    if (cnt==5) {
+        $('#users_lt5').hide();
+        $('#accomodation').hide();
+        $('#places').hide();
+        $('#users_gt5').show();
+        $('#messageBlock').hide();
+    } else if (cnt>0 && cnt<5) {
+        $('#users_lt5').show();
+        $('#accomodation').show();
+        $('#places').show();
+        $('#users_gt5').hide();
+        $('#messageBlock').show();
+        for (var i=1; i<5; i++){
+            $('#user'+i).hide();
+        }
+        for (var i=1; i<=cnt; i++){
+            $('#user'+i).show();
+        }
+    } else {
+        for (var i=1; i<5; i++){
+            $('#user'+i).hide();
+        }
+    }
+    if (cnt>1 && cnt<5) {
+        $('.icon-trash').show();
+    } else {
+        $('.icon-trash').hide();
+    }
+}
 
 function empty_list(obj) {
     obj.empty();
@@ -193,6 +224,34 @@ function _dates_change() {
         console.log( "Request failed: " + textStatus );
     });
 }
+function del_user_str() {
+    var cnt = $('#users_cnt').val();
+    cnt--;
+    $('#users_cnt').val(cnt);
+    if (cnt<2) $('.icon-trash').hide();
+    var matches = $(this).attr('id').match(/(\d)$/);
+    if (matches) {
+        var num = matches[0];
+        $('#user'+num).hide();
+        $('#fio_'+num).val('');
+        $('#fiolat_'+num).val('');
+        $('#birthday_'+num).val('');
+        $('#passport_'+num).val('');
+        $('#passportdate1_'+num).val('');
+        $('#passportdate2_'+num).val('');
+        $('#visa_'+num).attr('checked',false);
+    }
+}
+function show_other_dates() {
+    if($('.dateSelection').is(':visible')){
+        $('.dateSelection').slideUp(100);
+        $(this).removeClass('active');
+    }
+    else{
+        $('.dateSelection').slideDown(100);
+        $(this).addClass('active');
+    }
+}
 $(document).ready(function(){
     $("#main_menu_button").click(function() {
         $(this).next().stop().toggleClass('active');
@@ -219,22 +278,29 @@ $(document).ready(function(){
     init_list1();
     init_list2();
     init_list3();
+    $('#users_cnt').change(change_users_cnt);
+    $('.icon-trash').click(del_user_str);
+    $('.dateSelection').hide();
+    $('#dateSelectionBut').click(show_other_dates);
+    $('#users_lt5 .birthday').inputmask("dd.mm.yyyy",{"placeholder" : "дд.мм.гггг", "clearIncomplete": true, yearrange: { minyear: 1916, maxyear: 2016 } });
+    $('#users_lt5 .pass1').inputmask("dd.mm.yyyy",{"placeholder" : "дд.мм.гггг", "clearIncomplete": true, yearrange: { minyear: 1960, maxyear: 2016 } });
+    $('#users_lt5 .pass2').inputmask("dd.mm.yyyy",{"placeholder" : "дд.мм.гггг", "clearIncomplete": true, yearrange: { minyear: 2016, maxyear: 2100 } });
 
-   /* $('#country_id').on("change", function(e) {
-        _list1_change(e.val);
-    });
-
-
-    $('#tematic_id').on("change", function(e) {
-        _list2_change(e.val);
-    });
-
-    $('#transport_id').on("change", function(e) {
-        _list3_change(e.val);
-    });
+    /* $('#country_id').on("change", function(e) {
+         _list1_change(e.val);
+     });
 
 
-    $('#date_from, #date_to').on('change', function(ev){
-        _dates_change();
-    });*/
+     $('#tematic_id').on("change", function(e) {
+         _list2_change(e.val);
+     });
+
+     $('#transport_id').on("change", function(e) {
+         _list3_change(e.val);
+     });
+
+
+     $('#date_from, #date_to').on('change', function(ev){
+         _dates_change();
+     });*/
 });

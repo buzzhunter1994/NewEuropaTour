@@ -132,9 +132,14 @@
 </footer>
 <div id="fb-root"></div>
 
-<?php  Yii::app()->clientScript->registerCoreScript('jquery') ?>
-<?php  Yii::app()->clientScript->registerCoreScript('jquery.ui') ?>
+<?php
+Yii::app()->clientScript->registerCoreScript('jquery');
+Yii::app()->clientScript->registerCoreScript('jquery.ui');
+$cssCoreUrl = Yii::app()->clientScript->getCoreScriptUrl();
+Yii::app()->clientScript->registerCssFile($cssCoreUrl . '/jui/css/base/jquery-ui.css');
+?>
 <script src="/js/jquery.bxslider.min.js"></script>
+<script src="/js/jquery.inputmask.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>
 <script src="/js/script.js"></script>
 <script>(function(d, s, id) {
