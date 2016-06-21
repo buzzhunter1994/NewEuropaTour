@@ -16,7 +16,6 @@ USE `neweuropatour`;
 
 
 -- Дамп структуры для таблица neweuropatour.t_countries
-DROP TABLE IF EXISTS `t_countries`;
 CREATE TABLE IF NOT EXISTS `t_countries` (
   `id` int(4) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
@@ -63,7 +62,6 @@ INSERT INTO `t_countries` (`id`, `name`, `short_name`, `title`, `description`, `
 
 
 -- Дамп структуры для таблица neweuropatour.t_posts
-DROP TABLE IF EXISTS `t_posts`;
 CREATE TABLE IF NOT EXISTS `t_posts` (
   `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(150) NOT NULL,
@@ -75,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `t_posts` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы neweuropatour.t_posts: 1 rows
+-- Дамп данных таблицы neweuropatour.t_posts: 5 rows
 /*!40000 ALTER TABLE `t_posts` DISABLE KEYS */;
 INSERT INTO `t_posts` (`id`, `title`, `text`, `catg`, `tags`, `url`, `is_news`) VALUES
 	(2, 'ПРАЗДНИК СЕРЕДИНЫ ЛЕТА В ШВЕЦИИ!', '<p>В этом году Мидсоммар, или Праздник середины лета, шведы будут отмечать 23 июня. Предлагаем и вам повеселиться на этом шведском празднике, отправившись с нами в тур по Скандинавии S2 Скандинавия комфорт 18 июня.</p>\r\n', '', '', 'prazdnik-serediny-leta-v-shvecii', 1),
@@ -87,7 +85,6 @@ INSERT INTO `t_posts` (`id`, `title`, `text`, `catg`, `tags`, `url`, `is_news`) 
 
 
 -- Дамп структуры для таблица neweuropatour.t_reviews
-DROP TABLE IF EXISTS `t_reviews`;
 CREATE TABLE IF NOT EXISTS `t_reviews` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
@@ -104,7 +101,6 @@ CREATE TABLE IF NOT EXISTS `t_reviews` (
 
 
 -- Дамп структуры для таблица neweuropatour.t_reviews_comments
-DROP TABLE IF EXISTS `t_reviews_comments`;
 CREATE TABLE IF NOT EXISTS `t_reviews_comments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT NULL,
@@ -121,7 +117,6 @@ CREATE TABLE IF NOT EXISTS `t_reviews_comments` (
 
 
 -- Дамп структуры для таблица neweuropatour.t_storage
-DROP TABLE IF EXISTS `t_storage`;
 CREATE TABLE IF NOT EXISTS `t_storage` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `key` varchar(255) NOT NULL,
@@ -135,7 +130,6 @@ CREATE TABLE IF NOT EXISTS `t_storage` (
 
 
 -- Дамп структуры для таблица neweuropatour.t_tours
-DROP TABLE IF EXISTS `t_tours`;
 CREATE TABLE IF NOT EXISTS `t_tours` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `country_id` int(11) DEFAULT NULL,
@@ -162,7 +156,6 @@ INSERT INTO `t_tours` (`id`, `country_id`, `theme_id`, `code`, `price`, `title`,
 
 
 -- Дамп структуры для таблица neweuropatour.t_tour_themes
-DROP TABLE IF EXISTS `t_tour_themes`;
 CREATE TABLE IF NOT EXISTS `t_tour_themes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `theme` varchar(50) DEFAULT NULL,
@@ -185,8 +178,75 @@ INSERT INTO `t_tour_themes` (`id`, `theme`, `name`, `description`) VALUES
 /*!40000 ALTER TABLE `t_tour_themes` ENABLE KEYS */;
 
 
+-- Дамп структуры для таблица neweuropatour.t_trips
+CREATE TABLE IF NOT EXISTS `t_trips` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tour_id` int(11) DEFAULT NULL,
+  `name` varchar(10) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `date_start` date DEFAULT NULL,
+  `date_arrive` date DEFAULT NULL,
+  `price` double DEFAULT NULL,
+  `seat_1_1` int(11) DEFAULT NULL,
+  `seat_1_2` int(11) DEFAULT NULL,
+  `seat_1_3` int(11) DEFAULT NULL,
+  `seat_1_4` int(11) DEFAULT NULL,
+  `seat_2_1` int(11) DEFAULT NULL,
+  `seat_2_2` int(11) DEFAULT NULL,
+  `seat_2_3` int(11) DEFAULT NULL,
+  `seat_2_4` int(11) DEFAULT NULL,
+  `seat_3_1` int(11) DEFAULT NULL,
+  `seat_3_2` int(11) DEFAULT NULL,
+  `seat_3_3` int(11) DEFAULT NULL,
+  `seat_3_4` int(11) DEFAULT NULL,
+  `seat_4_1` int(11) DEFAULT NULL,
+  `seat_4_2` int(11) DEFAULT NULL,
+  `seat_4_3` int(11) DEFAULT NULL,
+  `seat_4_4` int(11) DEFAULT NULL,
+  `seat_5_1` int(11) DEFAULT NULL,
+  `seat_5_2` int(11) DEFAULT NULL,
+  `seat_6_1` int(11) DEFAULT NULL,
+  `seat_6_2` int(11) DEFAULT NULL,
+  `seat_7_1` int(11) DEFAULT NULL,
+  `seat_7_2` int(11) DEFAULT NULL,
+  `seat_7_3` int(11) DEFAULT NULL,
+  `seat_7_4` int(11) DEFAULT NULL,
+  `seat_8_1` int(11) DEFAULT NULL,
+  `seat_8_2` int(11) DEFAULT NULL,
+  `seat_8_3` int(11) DEFAULT NULL,
+  `seat_8_4` int(11) DEFAULT NULL,
+  `seat_9_1` int(11) DEFAULT NULL,
+  `seat_9_2` int(11) DEFAULT NULL,
+  `seat_9_3` int(11) DEFAULT NULL,
+  `seat_9_4` int(11) DEFAULT NULL,
+  `seat_10_1` int(11) DEFAULT NULL,
+  `seat_10_2` int(11) DEFAULT NULL,
+  `seat_10_3` int(11) DEFAULT NULL,
+  `seat_10_4` int(11) DEFAULT NULL,
+  `seat_11_1` int(11) DEFAULT NULL,
+  `seat_11_2` int(11) DEFAULT NULL,
+  `seat_11_3` int(11) DEFAULT NULL,
+  `seat_11_4` int(11) DEFAULT NULL,
+  `seat_12_1` int(11) DEFAULT NULL,
+  `seat_12_2` int(11) DEFAULT NULL,
+  `seat_12_3` int(11) DEFAULT NULL,
+  `seat_12_4` int(11) DEFAULT NULL,
+  `seat_12_5` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK__t_tours` (`tour_id`),
+  CONSTRAINT `FK__t_tours` FOREIGN KEY (`tour_id`) REFERENCES `t_tours` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- Дамп данных таблицы neweuropatour.t_trips: ~3 rows (приблизительно)
+/*!40000 ALTER TABLE `t_trips` DISABLE KEYS */;
+INSERT INTO `t_trips` (`id`, `tour_id`, `name`, `description`, `date_start`, `date_arrive`, `price`, `seat_1_1`, `seat_1_2`, `seat_1_3`, `seat_1_4`, `seat_2_1`, `seat_2_2`, `seat_2_3`, `seat_2_4`, `seat_3_1`, `seat_3_2`, `seat_3_3`, `seat_3_4`, `seat_4_1`, `seat_4_2`, `seat_4_3`, `seat_4_4`, `seat_5_1`, `seat_5_2`, `seat_6_1`, `seat_6_2`, `seat_7_1`, `seat_7_2`, `seat_7_3`, `seat_7_4`, `seat_8_1`, `seat_8_2`, `seat_8_3`, `seat_8_4`, `seat_9_1`, `seat_9_2`, `seat_9_3`, `seat_9_4`, `seat_10_1`, `seat_10_2`, `seat_10_3`, `seat_10_4`, `seat_11_1`, `seat_11_2`, `seat_11_3`, `seat_11_4`, `seat_12_1`, `seat_12_2`, `seat_12_3`, `seat_12_4`, `seat_12_5`) VALUES
+	(1, 1, 'f0744567', '7 дней / 6 ночей, без ночных переездов', '2016-06-20', '2016-06-25', 300, NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(2, 1, 'f0744568', '7 дней / 6 ночей, без ночных переездов', '2016-06-21', '2016-06-26', 300, NULL, NULL, NULL, NULL, NULL, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(3, 1, 'f0744569', '7 дней / 6 ночей, без ночных переездов', '2016-06-22', '2016-06-27', 300, NULL, NULL, 1, 1, 1, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+/*!40000 ALTER TABLE `t_trips` ENABLE KEYS */;
+
+
 -- Дамп структуры для таблица neweuropatour.t_users
-DROP TABLE IF EXISTS `t_users`;
 CREATE TABLE IF NOT EXISTS `t_users` (
   `id` tinyint(4) NOT NULL AUTO_INCREMENT,
   `login` varchar(50) NOT NULL,
@@ -195,7 +255,7 @@ CREATE TABLE IF NOT EXISTS `t_users` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы neweuropatour.t_users: ~0 rows (приблизительно)
+-- Дамп данных таблицы neweuropatour.t_users: ~1 rows (приблизительно)
 /*!40000 ALTER TABLE `t_users` DISABLE KEYS */;
 INSERT INTO `t_users` (`id`, `login`, `password`, `name`) VALUES
 	(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin');
