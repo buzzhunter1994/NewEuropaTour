@@ -271,4 +271,7 @@ return array (
     'details' => 'Детальніше...',
     'introduce' => 'Представьтесь',
     'from' => 'Звідки Ви?',
+    ' tour| tours' => ' тур| тура| турів',
+    ' seat| seats' => ' місце| місця| місць',
+    'Layout and availability of buses' => 'СХЕМА РОЗТАШУВАННЯ І НАЯВНІСТЬ МІСЦЬ В АВТОБУСІ'
 );

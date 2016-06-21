@@ -98,9 +98,7 @@ class Bootstrap extends CApplicationComponent
 	public function registerPopover($selector = null, $options = array())
 	{
 		$this->registerTooltip();
-		if (!isset($options['selector']))
-			$options['selector'] = $selector !== null ? $selector : 'a[rel=popover]';
-		$this->registerPlugin(self::PLUGIN_POPOVER, 'body', $options);
+        $this->registerPlugin(self::PLUGIN_POPOVER, '[data-toggle="popover"]', $options);
 	}
 	public function registerTabs($selector = null, $options = array())
 	{
@@ -108,9 +106,7 @@ class Bootstrap extends CApplicationComponent
 	}
 	public function registerTooltip($selector = null, $options = array())
 	{
-		if (!isset($options['selector']))
-			$options['selector'] = $selector !== null ? $selector : 'a[rel=tooltip]';
-		$this->registerPlugin(self::PLUGIN_TOOLTIP, 'body', $options);
+		$this->registerPlugin(self::PLUGIN_TOOLTIP, '[data-toggle="tooltip"]', $options);
 	}
 	public function registerTypeahead($selector = null, $options = array())
 	{

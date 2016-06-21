@@ -56,7 +56,7 @@
                 <img src="http://dummyimage.com/130x130/3069b3/fff.png" class="img-responsive img-circle" alt="Responsive image">
                 <h3 class="styled-header">Отдых на море!</h3>
                 <p>Комфортные экскурсионные туры по Европе с отдыхом на море в Италии, Испании и Черногории</p>
-                <a class="btn btn-default btn-block" href="#" role="button">Подробнее</a>
+                <a class="btn-yellow btn-block" href="#" role="button">Подробнее</a>
             </div>
         </div>
         <div class="col-sm-6 col-md-3 col-lg-3">
@@ -64,7 +64,7 @@
                 <img src="http://dummyimage.com/130x130/3069b3/fff.png" class="img-responsive img-circle" alt="Responsive image">
                 <h3 class="styled-header">Отдых на море!</h3>
                 <p>Комфортные экскурсионные туры по Европе с отдыхом на море в Италии, Испании и Черногории</p>
-                <a class="btn btn-default btn-block" href="#" role="button">Подробнее</a>
+                <a class="btn-yellow btn-block" href="#" role="button">Подробнее</a>
             </div>
         </div>
         <div class="col-sm-6 col-md-3 col-lg-3">
@@ -72,7 +72,7 @@
                 <img src="http://dummyimage.com/130x130/3069b3/fff.png" class="img-responsive img-circle" alt="Responsive image">
                 <h3 class="styled-header">Отдых на море!</h3>
                 <p>Комфортные экскурсионные туры по Европе с отдыхом на море в Италии, Испании и Черногории</p>
-                <a class="btn btn-default btn-block" href="#" role="button">Подробнее</a>
+                <a class="btn-yellow btn-block" href="#" role="button">Подробнее</a>
             </div>
         </div>
         <div class="col-sm-6 col-md-3 col-lg-3">
@@ -80,7 +80,7 @@
                 <img src="http://dummyimage.com/130x130/3069b3/fff.png" class="img-responsive img-circle" alt="Responsive image">
                 <h3 class="styled-header">Отдых на море!</h3>
                 <p>Комфортные экскурсионные туры по Европе с отдыхом на море в Италии, Испании и Черногории</p>
-                <a class="btn btn-default btn-block" href="#" role="button">Подробнее</a>
+                <a class="btn-yellow btn-block" href="#" role="button">Подробнее</a>
             </div>
         </div>
     </div>

@@ -131,9 +131,20 @@
     </div>
 </footer>
 <div id="fb-root"></div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<div class="modal fade" id="modalWindow">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+<?php
+//Yii::app()->clientScript->registerCoreScript('jquery');
+$cssCoreUrl = Yii::app()->clientScript->getCoreScriptUrl();
+//Yii::app()->clientScript->registerScriptFile($cssCoreUrl . '/jui/js/jquery-ui.min.js', CClientScript::POS_HEAD);
+//Yii::app()->clientScript->registerCssFile($cssCoreUrl . '/jui/css/base/jquery-ui.css');
+?>
 <script src="/js/jquery.bxslider.min.js"></script>
+<script src="/js/jquery.inputmask.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>
 <script src="/js/script.js"></script>
 <script>(function(d, s, id) {

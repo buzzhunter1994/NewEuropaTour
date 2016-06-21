@@ -17,16 +17,18 @@ $this->breadcrumbs = array(
                             <?=$tour->title?>
                             &nbsp;<small><?=$tour->days?></small>
                         </h1>
+                        <? if ($tour->price) {?>
                         <div class="price">
-                            <span>от <strong class="woturusl" data-content="19&nbsp;632&nbsp;450&nbsp;руб. (€850)">19&nbsp;632&nbsp;450&nbsp;руб.</strong></span>&lt;
+                            <span><strong data-content="<?=Currency::convert($tour->price)?> (<?=Currency::format($tour->price)?>)"><?=Currency::convert($tour->price)?></strong></span>&lt;
                         </div>
+                        <? } ?>
                     </div>
                     <div class="route"><?=$tour->route?></div>
                     <div class="icon iconBus"></div>
                 </div>
                 <div class="tagsBox clearfix">
                     <div class="part">
-                        <em>Тематики тура:</em>
+                        <em>Тематика тура:</em>
                         <span class="label label-tag"><?=$tour->theme->name?></span>
                     </div>
                     <div class="part">
@@ -61,21 +63,27 @@ $this->breadcrumbs = array(
                         <?
                         foreach($tour->trips as $trip)
                         {
-                            $freeSeats = count($trip->freeSeats());
+                            $freeSeats = $trip->freeSeatsCount();
                             $selfDate = $trip->selfDate();
                             $seats_count = $freeSeats . Yii::t('yii', ' seat| seats', $freeSeats);
+                            if ($trip->freeSeatsCount() < 20)
+                                $lastFree = ' class="lastFree"';
+                            elseif($trip->freeSeatsCount() == 0)
+                                $lastFree = ' class="noFree"';
+                            else
+                                $lastFree = '';
                         ?>
-                        <tr>
+                        <tr<?=$lastFree?>>
                             <td></td>
                             <td><span class="hidden-label">Дата заезда:</span><?=$selfDate?></td>
-                            <td class="space"><span class="hidden-label">Места:</span><a href="#" class="places dashed-green" title="Показать наличие мест"><?=$seats_count?></a></td>
+                            <td class="space"><span class="hidden-label">Места:</span><a href="#" class="places dashed-green" data-toggle="modal" data-url="/tours/bus/id/<?=$trip->id?>" title="Показать наличие мест"><?=$seats_count?></a></td>
                             <td class="desc"><span class="hidden-label">Описание:</span>
                                 <?=$trip->description?>
                             </td>
                             <td class="price"><span class="hidden-label">Цена:</span>
-                                <span class="turusl" data-content="<?=$trip->price?>"><?=$trip->price?></span>
+                                <span data-toggle="tooltip" data-placement="top" title="<?=Currency::convert($trip->price)?> (<?=Currency::format($trip->price)?>)"><?=Currency::convert($trip->price)?></span>
                             </td>
-                            <td class="printhide"><a class="btn butn butnGreen butnSm" href="/tours/order/id/<?=$trip->id?>">Заказать тур</a></td>
+                            <td class="printhide"><a class="btn-yellow btn-block" href="/tours/order/id/<?=$trip->id?>">Заказать тур</a></td>
                         </tr>
                         <? } ?>
 

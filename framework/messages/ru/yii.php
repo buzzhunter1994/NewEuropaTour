@@ -292,4 +292,5 @@ return array (
   'from' => 'Откуда Вы?',
   ' tour| tours' => ' тур| тура| туров',
   ' seat| seats' => ' место| места| мест',
+  'Layout and availability of buses' => 'СХЕМА РАСПОЛОЖЕНИЯ И НАЛИЧИЕ МЕСТ В АВТОБУСЕ'
 );

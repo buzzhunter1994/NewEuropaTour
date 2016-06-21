@@ -12,12 +12,16 @@ class ToursController extends Controller
 		$tour = Tours::model()->findByPk($id);
 		$this->render('view', array('tour'=>$tour));
 	}
-	public function actionOrder($id)
-	{
-		$trip = Trips::model()->findByPk($id);
-		$anotherDates = Trips::model();
-		$this->render('order', array('trip'=>$trip, 'tour'=>$trip->tour));
-	}
+    public function actionOrder($id)
+    {
+        $trip = Trips::model()->findByPk($id);
+        $this->render('order', array('trip'=>$trip, 'tour'=>$trip->tour));
+    }
+    public function actionBus($id)
+    {
+        $trip = Trips::model()->findByPk($id);
+        $this->renderPartial('bus', array('trip'=>$trip));
+    }
 	public function actionIndex()
 	{
 		$countries = Countries::model()->findAll();

@@ -131,12 +131,17 @@
     </div>
 </footer>
 <div id="fb-root"></div>
-
+<div class="modal fade" id="modalWindow">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
 <?php
-Yii::app()->clientScript->registerCoreScript('jquery');
-Yii::app()->clientScript->registerCoreScript('jquery.ui');
+//Yii::app()->clientScript->registerCoreScript('jquery');
 $cssCoreUrl = Yii::app()->clientScript->getCoreScriptUrl();
-Yii::app()->clientScript->registerCssFile($cssCoreUrl . '/jui/css/base/jquery-ui.css');
+//Yii::app()->clientScript->registerScriptFile($cssCoreUrl . '/jui/js/jquery-ui.min.js', CClientScript::POS_HEAD);
+//Yii::app()->clientScript->registerCssFile($cssCoreUrl . '/jui/css/base/jquery-ui.css');
 ?>
 <script src="/js/jquery.bxslider.min.js"></script>
 <script src="/js/jquery.inputmask.bundle.min.js"></script>
