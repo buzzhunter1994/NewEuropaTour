@@ -90,15 +90,16 @@
                             </div>
                         </div>
                     </div>
+                    <div class="sliderHot"><span>Горячие предложения</span></div>
                 </div>
                 <div class="col-lg-3 col-md-4 col-sm-12">
                     <div class="tour-search">
                         <h3>Быстрый подбор туров</h3>
                         <form method="GET" name="search_tours" id="search_tours" action="/tours/search/" class="tour-search-form">
-                            <input type="hidden" name="sort" id="sort" value="date">
+
                             <?php $this->widget('application.components.widgets.ToursFilter'); ?>
                             <br />
-                            <a href="javascript:void(0);" class="search-tour-btn" onClick="do_search_tours();">Показать предложения</a>
+                            <a href="javascript:void(0);" class="search-tour-btn" onclick="return do_search_tours();"><?=Yii::t('yii','show offers')?></a>
                         </form>
                     </div>
                 </div>
@@ -137,12 +138,6 @@
         </div>
     </div>
 </div>
-<?php
-//Yii::app()->clientScript->registerCoreScript('jquery');
-$cssCoreUrl = Yii::app()->clientScript->getCoreScriptUrl();
-//Yii::app()->clientScript->registerScriptFile($cssCoreUrl . '/jui/js/jquery-ui.min.js', CClientScript::POS_HEAD);
-//Yii::app()->clientScript->registerCssFile($cssCoreUrl . '/jui/css/base/jquery-ui.css');
-?>
 <script src="/js/jquery.bxslider.min.js"></script>
 <script src="/js/jquery.inputmask.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>

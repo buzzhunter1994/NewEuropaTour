@@ -1,7 +1,7 @@
 <?php
 $this->pageTitle='Питання-відповіді';
 $this->breadcrumbs = array(
-    'Главная'=> Yii::app()->homeUrl,
+    Yii::t('yii','Main')=> Yii::app()->homeUrl,
     'Питання-відповіді',
 );
 ?>

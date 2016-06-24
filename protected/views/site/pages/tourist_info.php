@@ -1,7 +1,7 @@
 <?php
 $this->pageTitle='Информация по отправке автобусов для туристов';
 $this->breadcrumbs = array(
-    'Главная'=> Yii::app()->homeUrl,
+    Yii::t('yii','Main')=> Yii::app()->homeUrl,
     'Информация по отправке автобусов для туристов',
 );
 ?>

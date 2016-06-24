@@ -1,6 +1,12 @@
 <?php
 class Tours extends CActiveRecord
 {
+	public $title;
+	public $description;
+	public $route;
+	public $days;
+	public $program;
+
 	public function tableName()
 	{
 		return '{{tours}}';
@@ -23,6 +29,25 @@ class Tours extends CActiveRecord
 			'theme' => array(self::BELONGS_TO, 'TourThemes', 'theme_id'),
 			'trips' => array(self::HAS_MANY, 'Trips', 'tour_id'),
 		);
+	}
+    public function nearestDate(){
+        return Trips::model()->find(array(
+            'condition'=>'tour_id = :tour_id ORDER BY `date_start`',
+            'params' => array(':tour_id'=>$this->id)
+        ));
+    }
+	protected function afterFind()
+	{
+		parent::afterFind();
+		$lang = Yii::app()->language;
+		$otherLang = array_filter(Yii::app()->params['languages'], function($k) {
+			return $k != Yii::app()->language;
+		}, ARRAY_FILTER_USE_KEY);
+		$this->title = $this['title_'.$lang]?$this['title_'.$lang]:$this['title_'.key($otherLang)];
+		$this->description = $this['description_'.$lang]?$this['description_'.$lang]:$this['description_'.key($otherLang)];
+		$this->route = $this['route_'.$lang]?$this['route_'.$lang]:$this['route_'.key($otherLang)];
+		$this->days = $this['days_'.$lang]?$this['days_'.$lang]:$this['days_'.key($otherLang)];
+		$this->program = $this['program_'.$lang]?$this['program_'.$lang]:$this['program_'.key($otherLang)];
 	}
 	public function attributeLabels()
 	{

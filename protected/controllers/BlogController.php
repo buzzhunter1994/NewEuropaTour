@@ -19,7 +19,7 @@ class BlogController extends Controller
 	                'order'=>'id DESC',
 	            ),
 	            'pagination'=>array(
-	                'pageSize'=>5,
+	                'pageSize'=>3,
 	            ),
 	        ));
 		$this->render('index',array(

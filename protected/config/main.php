@@ -44,11 +44,18 @@ return array(
             'showScriptName' => false,
 			'urlFormat'=>'path',
 			'rules'=>array(
-				'/country/<name:.*>' =>'countries/view',
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 				'/post/<url:.*>' =>'news/view',
+				'/tours/countries/' =>'tours/countries',
+				'/tours/countries/<country:\w+>' =>'tours/country',
+				'/tours/transport/<transport:(bus)|(avia)>/' =>'tours/transport',
+				'/tours/transport/<transport:(bus)|(avia)>/country/<country:\w+>' =>'tours/transportcountry',
+				'/tours/vid/<tematic:\w+>' =>'tours/theme',
+				'/tours/vid/<tematic:\w+>/<country:\w+>' =>'tours/themecountry',
+				'/tours/vid/<tematic:\w+>/transport/<transport:(bus)|(avia)>' =>'tours/themetransport',
+				'/tours/vid/<tematic:\w+>/transport/<transport:\w+>/country/<country:\w+>' =>'tours/themetransportcountry',
 
 
                 '/search' =>'site/search',

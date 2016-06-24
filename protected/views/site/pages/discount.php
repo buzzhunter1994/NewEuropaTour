@@ -1,7 +1,7 @@
 <?php
 $this->pageTitle='Скидки для постоянных клиентов и подарочные сертификаты';
 $this->breadcrumbs = array(
-    'Главная'=> Yii::app()->homeUrl,
+    Yii::t('yii','Main')=> Yii::app()->homeUrl,
     'Скидки для постоянных клиентов и подарочные сертификаты',
 );
 ?>

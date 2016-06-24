@@ -8,18 +8,18 @@ $this->breadcrumbs = array(
 );
 $tourType = "";
 switch($tour->type){
-case 'bus':
-    $tourType = '<div class="icon iconBus"></div>';
-    break;
-case 'air':
-    $tourType = '<div class="icon iconAir"></div>';
-    break;
-case 'train':
-    $tourType = '<div class="icon iconTrain"></div>';
-    break;
-case 'liner':
-    $tourType = '<div class="icon iconLiner"></div>';
-    break;
+    case 'bus':
+        $tourType = '<div class="icon iconBus"></div>';
+        break;
+    case 'air':
+        $tourType = '<div class="icon iconAir"></div>';
+        break;
+    case 'train':
+        $tourType = '<div class="icon iconTrain"></div>';
+        break;
+    case 'liner':
+        $tourType = '<div class="icon iconLiner"></div>';
+        break;
 }
 ?>
 <div class="container">
@@ -40,14 +40,14 @@ case 'liner':
                     </div>
                     <div class="route"><?=$tour->route?></div>
                     <?=$tourType?>
-                    </div>
+                </div>
                 <div class="tagsBox clearfix">
                     <div class="part">
-                        <em>Тематика тура:</em>
+                        <em>Тематика туру:</em>
                         <span class="label label-tag"><?=$tour->theme->name?></span>
                     </div>
                     <div class="part">
-                        <em>Страна тура:</em>
+                        <em>Країна туру:</em>
                         <span class="label-tag-container">
                             <span class="label label-tag"><?=$tour->country->name?></span>
                         </span>
@@ -68,10 +68,10 @@ case 'liner':
                         <thead>
                         <tr class="header">
                             <th></th>
-                            <th>Даты заездов</th>
-                            <th>Наличие мест</th>
-                            <th class="desc">Описание</th>
-                            <th>Базовая цена</th>
+                            <th>Дати заїздів</th>
+                            <th>Наявність місць</th>
+                            <th class="desc">Опис</th>
+                            <th>Базова ціна</th>
                             <th class="printhide"></th>
                         </tr>
                         </thead>
@@ -93,15 +93,15 @@ case 'liner':
                                 ?>
                                 <tr<?=$lastFree?>>
                                     <td></td>
-                                    <td><span class="hidden-label">Дата заезда:</span><?=$selfDate?></td>
-                                    <td class="space"><span class="hidden-label">Места:</span><a href="#" class="places dashed-green" data-toggle="modal" data-url="/tours/bus/id/<?=$trip->id?>" title="Показать наличие мест"><?=$seats_count?></a></td>
+                                    <td><span class="hidden-label">Дата заїзду:</span><?=$selfDate?></td>
+                                    <td class="space"><span class="hidden-label">Місця:</span><a href="#" class="places dashed-green" data-toggle="modal" data-url="/tours/bus/id/<?=$trip->id?>" title="Показать наличие мест"><?=$seats_count?></a></td>
                                     <td class="desc"><span class="hidden-label">Описание:</span>
                                         <?=$trip->description?>
                                     </td>
-                                    <td class="price"><span class="hidden-label">Цена:</span>
+                                    <td class="price"><span class="hidden-label">Ціна:</span>
                                         <span data-toggle="tooltip" data-placement="top" title="<?=Currency::convert($trip->price)?> (<?=Currency::format($trip->price)?>)"><?=Currency::convert($trip->price)?></span>
                                     </td>
-                                    <td class="printhide"><a class="btn-yellow btn-block" href="/tours/order/id/<?=$trip->id?>">Заказать тур</a></td>
+                                    <td class="printhide"><a class="btn-yellow btn-block" href="/tours/order/id/<?=$trip->id?>">Замовити тур</a></td>
                                 </tr>
                                 <? }?>
                         </tbody>
@@ -109,10 +109,10 @@ case 'liner':
                 </div>
                 <?}
                 else
-                print "<div class=\"scheduler\"><div class=\"alert alert-warning\"><p>Внимание! На данный момент отсутствуют запланированные заезды для данного тура.</p></div></div>";
+                    print "<div class=\"scheduler\"><div class=\"alert alert-warning\"><p>Увага! На даний момент відсутні заплановані заїзди для даного туру.</p></div></div>";
                 ?>
                 <div class="scheduler">
-                    <h2>Программа автобусного тура</h2>
+                    <h2>Програма автобусного туру</h2>
                 <?=$tour->program?>
                 </div>
             </div>
@@ -121,12 +121,12 @@ case 'liner':
             <div class="menuBlock lColPayment">
                 <h4>Оплата</h4>
                 <div class="contentBox">
-                    <p>Если Вы не планируете приходить в офис, оставьте соответствующий комментарий в заявке, и мы вышлем все необходимые документы на email.</p>
-                    <p style="text-align:center;"><strong>Подробнее о <a href="/payment/">способах оплаты</a>.</strong></p>
+                    <p>Якщо Ви не плануєте приходити в офіс, залиште відповідний коментар в заявці, і ми надішлемо всі необхідні документи на адресу електронної пошти.</p>
+                    <p style="text-align:center;"><strong>Докладніше про <a href="/payment/">способи оплати</a>.</strong></p>
                 </div>
-                <h4>Курсы валют</h4>
+                <h4>Курси валют</h4>
                 <div class="contentBox">
-                    <p>Актуальные курсы валют в расчетах:<br>Доллар: <strong class="red">65,44</strong> руб.</p>
+                    <p>Актуальні курси валют в розрахунках:<br>Доллар: <strong class="red">24,9</strong> грн.</p>
                 </div>
             </div>
         </div>

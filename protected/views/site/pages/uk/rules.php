@@ -1,7 +1,7 @@
 <?php
 $this->pageTitle='Правила поведінки в автобусі і правила безпеки';
 $this->breadcrumbs = array(
-    'Главная'=> Yii::app()->homeUrl,
+    Yii::t('yii','Main')=> Yii::app()->homeUrl,
     'Правила поведінки в автобусі і правила безпеки',
 );
 ?>

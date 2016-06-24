@@ -21,6 +21,9 @@ class Reviews extends CActiveRecord
 			'reviewsComments' => array(self::HAS_MANY, 'ReviewsComments', 'review_id'),
 		);
 	}
+    public function selfDate(){
+        return date("d.m.Y", strtotime($this->date));
+    }
 	public function attributeLabels()
 	{
 		return array(

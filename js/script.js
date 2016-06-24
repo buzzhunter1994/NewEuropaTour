@@ -10,6 +10,34 @@ var url_list3_param = 'get_countries_tematics';
 var url_list4_param = 'get_tours_cnt';
 
 /*==============================================*/
+function do_search_tours() {
+
+    var country = $("#country_id").val();
+    var tematic = $("#tematic_id").val();
+    var transport = $("#transport_id").val();
+
+    var url;
+
+    if (!country && !tematic && transport) {
+        url = '/tours/transport/'+transport+'/';
+    } else if (!country && tematic && !transport) {
+        url = '/tours/vid/'+tematic+'/';
+    } else if (country && !tematic && !transport) {
+        url = '/tours/countries/'+country+'/';
+    } else if (country && !tematic && transport) {
+        url = '/tours/transport/'+transport+'/country/'+country+'/';
+    } else if (!country && tematic && transport) {
+        url = '/tours/vid/'+tematic+'/transport/'+transport+'/';
+    } else if (country && tematic && !transport) {
+        url = '/tours/vid/'+tematic+'/'+country+'/';
+    } else if (country && tematic && transport) {
+        url = '/tours/vid/'+tematic+'/transport/'+transport+'/country/'+country+'/';
+    } else {
+        url = '/tours/';
+    }
+    document.location.href = url;
+    return false;
+}
 function modalWindow(url) {
     $.ajax({
         'type': 'get',

@@ -44,7 +44,7 @@ $this->breadcrumbs = array(
             </div>
             <div class="row">
                 <div class="col-md-12 col-lg-7">
-                    <h2 class="styled-header">Туры по странам</h2>
+                    <h2 class="styled-header">Тури по країнам</h2>
                     <div class="listOfCountries">
                         <ul class="list-with-gap clearfix">
                             <?php
@@ -57,7 +57,7 @@ $this->breadcrumbs = array(
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-5">
-                    <h2 class="styled-header">Туры по тематике</h2>
+                    <h2 class="styled-header">Тури за тематикою</h2>
                     <div class="listOfCountries">
                         <ul>
                             <?php

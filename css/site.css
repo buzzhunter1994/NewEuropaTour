@@ -52,7 +52,7 @@
     border: none;
     background: none;
     outline: none;
-    height: 35px;
+    min-height: 35px;
     font-family: 'PFDinTextCondPro-Medium', sans-serif;
     font-size: 16px;
     padding: 0 10px;
@@ -69,6 +69,13 @@
 .button-default {
     background-color: #007eff;
     color: #ffffff;
+}
+.button-big {
+    padding: 15px 25px;
+    font-size: 21px;
+}
+.t-a_c {
+    text-align: center;
 }
 .p_r {
     position: relative;
@@ -155,6 +162,11 @@ a:focus, select:focus{
     font-size: 14px;
     color: #ffa201;
 }
+.sliderHot{height:63px;text-align:center;text-transform:uppercase;width:100%;position:absolute;top:0;left:0;z-index:40;}
+.sliderHot span{background:url('viSliderHot.png') repeat-x 0 -63px;color: #f0262d;display:inline-block;font:700 24px/1em 'PFDinTextCondPro-Medium', arial, sans-serif;height:63px;padding:12px 10px 0;position:relative;}
+.sliderHot span:before{background:url('viSliderHot.png') no-repeat;content:"";height:63px;width:40px;position:absolute;top:0;right:100%;}
+.sliderHot span:after{background:url('viSliderHot.png') no-repeat 100% 0;content:"";height:63px;width:40px;position:absolute;top:0;left:100%;}
+
 .wrap {
     min-height: 100%;
 }
@@ -230,15 +242,15 @@ a:focus, select:focus{
 .sampleTour .descriptionCol{margin:0 10px 10px 44px;position:relative;font-family:'PFDinTextCondPro-Medium', arial, sans-serif;}
 .sampleTour .descriptionCol .caption { margin-right: -10px;}
 .sampleTour .descriptionCol .caption small{font-weight: normal;font-size: 14px; color: #999;}
-.sampleTour .descriptionCol h1, .sampleTour .descriptionCol h1 a{border:0;color:#3a668e;display:table-cell;font-size:22px;font-weight:300;margin:0;padding: 10px 0 22px 0;text-decoration:none;text-transform:none;}
+.sampleTour .descriptionCol h1, .sampleTour .descriptionCol h1 a{border:0;color:#007eff;display:table-cell;font-size:22px;font-weight:300;margin:0;padding: 10px 0 22px 0;text-decoration:none;text-transform:none;}
 .sampleTour .descriptionCol h1 {width:100%;}
-.sampleTour .descriptionCol .h-title, .sampleTour .descriptionCol h1 a{border:0; color: #3a668e;display:table-cell;font-size:22px;font-weight:300;margin:0; padding: 10px 0 10px 0;text-decoration:none;text-transform:none;}
+.sampleTour .descriptionCol .h-title, .sampleTour .descriptionCol h1 a{border:0; color: #007eff;display:table-cell;font-size:22px;font-weight:300;margin:0; padding: 10px 0 10px 0;text-decoration:none;text-transform:none;}
 .sampleTour .descriptionCol .h-title {width: 100%;}
-.sampleTour .descriptionCol .h-title a{color: #3a668e;text-decoration: none;}
+.sampleTour .descriptionCol .h-title a{color: #007eff;text-decoration: none;}
 .sampleTour .descriptionCol h1 a{display:inline;padding:0;}
 .sampleTour .descriptionCol h1 a:hover{color:#264a6b;}
 .sampleTour .descriptionCol .price{color:#fff;display:table-cell;font:300 14px/1em 'PFDinTextPro-Light', arial, sans-serif;padding:0 0 5px 20px;text-align:right;vertical-align:top;}
-.sampleTour .descriptionCol .price span{background:#397bb8;display:inline-block;font-size:18px;font-weight:700;padding:8px;white-space:nowrap;}
+.sampleTour .descriptionCol .price span{background:#007eff;display:inline-block;font-size:18px;font-weight:700;padding:8px;white-space:nowrap;}
 .sampleTour .descriptionCol .price span strong{color:#fffeb7;font-size:25px;}
 .sampleTour .descriptionCol .price em{background:#124371;display:inline-block;font-style:normal;padding:3px 8px;}
 .sampleTour .descriptionCol .route{color:#777;font:300 15px 'PFDinTextPro-Light', arial, sans-serif;margin:-16px 0 10px 0;position:relative;text-transform:uppercase; width:75%;}
@@ -250,7 +262,7 @@ a:focus, select:focus{
 .sampleTour .descriptionCol .date{color:#999;}
 .sampleTour .date em{display:inline-block;float:left;font-style:normal;margin:2px 10px 2px 0;}
 .sampleTour .label-date{background:#eee;border:1px solid #ddd;color:#000;display:inline-block;font-weight:300;margin:2px 5px 2px 0;}
-.sampleTour .label-date:hover{background:#fff;color:#3a668e;text-decoration: none;}
+.sampleTour .label-date:hover{background:#fff;color:#007eff;text-decoration: none;}
 .sampleTour .label-date.dateRed{background:#ffb8ba;border-color:#b91419;color:#4c0508;}
 .sampleTour .label-date.dateYellow{background:#ffe5c2;border-color:#c97d1a;color:#87530e;}
 .sampleTour .label-date.dateGreen{background:#b0ffbe;border-color:#056516;color:#1f6b2d;}
@@ -312,7 +324,7 @@ a:focus, select:focus{
 .sampleTour .h1 a:hover{color:#23557c;}
 .sampleTour .scheduler {margin: 10px 15px; }
 .lColPayment{}
-.lColPayment h4{background:#4d7ea7;color:#fff;}
+.lColPayment h4{color:#fff;}
 .lColPayment .contentBox{padding:10px; font-size: 12px;}
 .countryDesc img {
     float: right;
@@ -418,7 +430,7 @@ a:focus, select:focus{
     font-weight: 300;
     font-size: 20px;
     text-align: center;
-    margin: 25px 0 10px;
+    margin: 15px 0 15px;
 }
 
 .contacts > span {
@@ -802,7 +814,7 @@ input[type="color"] {
     outline: none !important;
     color: #ffffff;
     font-family: sans-serif;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: bold;
     text-transform: uppercase;
     background: red;
@@ -846,7 +858,12 @@ input[type="color"] {
     margin-top: 5px;
 }
 
-
+.m_flag {
+    padding-right: 3px;
+}
+.m_flag img {
+    vertical-align: top;
+}
 
 .btn-yellow, .btn-yellow:hover, .btn-yellow:active, .btn-yellow:focus {
     display: block;
@@ -891,15 +908,17 @@ input[type="color"] {
     margin-bottom: 45px;
 }
 
-.rec-item h3 {
+.rec-item h3,.rec-item h3 a{
     font-family: 'PFDinTextCondPro-Medium', sans-serif;
     font-size: 18px;
     text-transform: uppercase;
+    text-decoration: none;
     margin-top: 5px;
     margin-bottom: 5px;
+    color: inherit;
 }
 
-.rec-item h3 .price {
+.rec-item h3 .price, .rec-item h3 a .price {
     color: #0494f0;
 }
 
@@ -1030,14 +1049,14 @@ input[type="color"] {
     text-align: justify;
 }
 .dateSelectionBut {
-    border-bottom: 1px dotted #4078A3;
-    color: #4078A3;
+    border-bottom: 1px dotted #007eff;
+    color: #007eff;
     cursor: pointer;
     display: inline-block;
     margin-left: 10px;
     position: relative;
 }
-.dateSelectionBut:hover{color:#23557c;}
+.dateSelectionBut:hover{color: #0e73e5;}
 .dateSelectionBut:after{background:url("dateSelectorArr.png") no-repeat;content:"";display:none;height:10px;width:19px;position:absolute;bottom:-15px;left:50%;margin-left:-9px;}
 .dateSelectionBut.active:after{display:block;}
 .dateSelection {
@@ -1050,9 +1069,7 @@ input[type="color"] {
 .passportForm .caption{padding:10px;}
 .passportForm .caption .selectCol{float:left;width:33.3%;}
 .passportForm .caption select{height:36px;margin:0;padding:9px 4px; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none;}
-.passportForm .caption h4{float:left;margin:0;padding:9px 0;text-align:center;width:33.3%;}
-.passportForm .caption .msg{float:left;font:300 14px/18px sans-serif;padding:9px 0;text-align:right;width:33.3%;}
-.passportForm .caption .msg .alerter{color:#f00;}
+.passportForm  h4{text-align:center;}
 .passportForm .groupContent{border-top:1px solid #ccc;padding:10px;}
 .passportForm .groupContent .importantNotice{margin:0 0 10px;}
 .passportForm .groupContent textarea{margin:0;width:100%;
@@ -1068,11 +1085,11 @@ input[type="color"] {
 .passportTbl td:last-child{padding:1%;}
 .passportTbl td .icon-trash{background:url('vi-blue-glyphicons-halflings.png') -456px 0;cursor:pointer;}
 .passportTbl td .icon-trash:hover{opacity:.7;}
-.passportTbl td.td_birthday{width:9%;}
+.passportTbl td.td_birthday{width:20%;}
 .passportTbl td.td_icon{width:4%;}
-.form  input,.passportForm textarea{ -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none;}
-.form  input.correct[type="text"]{background:#f0ffea url('correct.png') no-repeat 100% 50% !important;border-color:#45bb20;color:#296e0a;padding-right:22px;}
-.form  input.incorrect[type="text"]{background:#ffebeb url('incorrect.png') no-repeat 100% 50% !important;border-color:#d74747;color:#a30f0f;padding-right:22px;}
+.form input,.form textarea,.passportForm textarea{ -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none;}
+.form input.correct[type="text"]{background:#f0ffea url('correct.png') no-repeat 100% 50% !important;border-color:#45bb20;color:#296e0a;padding-right:22px;}
+.form input.incorrect[type="text"]{background:#ffebeb url('incorrect.png') no-repeat 100% 50% !important;border-color:#d74747;color:#a30f0f;padding-right:22px;}
 
 .bus-map{border:1px solid #ddd;margin-bottom:20px;padding:20px;}
 .bus-map h4{margin-top:0;text-align:center;}
@@ -1099,7 +1116,7 @@ input[type="color"] {
 .rowSeat i{position:relative;top:6px;left:9px}
 .busCol.busFront{background:url('busFront.png') no-repeat 0 50%;border-radius:0 13px 13px 0;float:left;height:191px;padding:0;width:97px;}
 .exitCol{position:relative;}
-.exitCol:after{color:#000;content:"ВХОД"; font-family: 'PFDinTextCondPro-Medium';text-align:center;width:51px;position:absolute;bottom:-30px;left:0;}
+.exitCol:after{color:#000;content:"ВХОД"; font-family: 'PFDinTextCondPro-Medium', arial, sans-serif;text-align:center;width:51px;position:absolute;bottom:-30px;left:0;}
 .busLegend{margin-bottom:20px;text-align:center;}
 .busLegend .legendContent{display:inline-block;}
 .busLegend h5{color:#000;display:inline-block;float:left;margin:0 10px 0 0;}
@@ -1111,3 +1128,13 @@ input[type="color"] {
 .legendItem .rowSeat i{position:relative;top:-8px;left:5px}
 .bus-map .msg{color:#777;font-size:11px;line-height:13px;}
 .bus-map .msg p:last-child{margin:0;}
+
+.disclaimer{background:#fffee0;border:1px solid #bfbb8d;color:#605f33;font-size:10px;line-height:12px;margin:30px 0;padding:10px;}
+.confirmDetails{background:#f8f8f8;border-top:1px solid #ddd;padding:10px;}
+.confirmDetails .itemRow{border-bottom:1px dotted #ddd;margin:0 0 10px;padding-bottom:10px;}
+.confirmDetails .itemRow:last-child{border-bottom:none;margin:0;}
+.confirmDetails .itemRowCaption{color:#777;font:300 16px/1em 'PFDinTextPro-Light',arial,sans-serif;}
+.confirmDetails .itemRowCaption span{color:#000;display:inline-block;margin-right:10px;width:170px;}
+.confirmDetails  .touristsData{background:#fff;box-shadow:0 0 3px rgba(0,0,0,.2);padding:10px;margin:10px 0 0;}
+.confirmDetails  .touristsData .info{background:#ecfdff;margin-top:10px;padding:10px;}
+

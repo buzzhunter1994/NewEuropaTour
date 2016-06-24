@@ -1,26 +1,24 @@
 <?php
-$this->pageTitle='Новости';
+$this->pageTitle=Yii::t('yii','News');
 $this->breadcrumbs = array(
-    'Главная'=> Yii::app()->homeUrl,
-    'Новости',
+    Yii::t('yii','Main')=> Yii::app()->homeUrl,
+    Yii::t('yii','News'),
 );
 ?>
 <div class="container">
     <div class="row">
         <div class="col-lg-3 col-md-4">
             <div class="tour-block">
-                <header><h3>Подбор туров</h3></header>
+                <header><h3><?=Yii::t('yii','Selection tours')?></h3></header>
                 <form method="GET" name="search_tours" id="search_tours" action="/tours/search/">
-                    <input type="hidden" name="sort" id="sort" value="date">
                     <?php $this->widget('application.components.widgets.ToursFilter'); ?>
                     <br />
-                    <button class="btn btn-block">показать предложения</button>
+                    <button class="btn btn-block"><?=Yii::t('yii','show offers')?></button>
                </form>
             </div>
         </div>
         <div class="col-lg-9 col-md-8 ">
-
-            <h2>Новости</h2>
+            <h2><?=Yii::t('yii','News')?></h2>
             <?php
             $this->widget('zii.widgets.CListView', array(
                 'dataProvider'=>$dataProvider,

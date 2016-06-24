@@ -1,6 +1,9 @@
 <?php
 class TourThemes extends CActiveRecord
 {
+	public $name;
+	public $description;
+
 	public function tableName()
 	{
 		return '{{tour_themes}}';
@@ -18,6 +21,16 @@ class TourThemes extends CActiveRecord
 			'tours' => array(self::HAS_MANY, 'Tours', 'theme_id'),
 			'toursCount' => array(self::STAT, 'Tours', 'theme_id')
 		);
+	}
+	protected function afterFind()
+	{
+		parent::afterFind();
+		$lang = Yii::app()->language;
+		$otherLang = array_filter(Yii::app()->params['languages'], function($k) {
+			return $k != Yii::app()->language;
+		}, ARRAY_FILTER_USE_KEY);
+		$this->name = $this['name_'.$lang]?$this['name_'.$lang]:$this['name_'.key($otherLang)];
+		$this->description = $this['description_'.$lang]?$this['description_'.$lang]:$this['description_'.key($otherLang)];
 	}
 	public function attributeLabels()
 	{

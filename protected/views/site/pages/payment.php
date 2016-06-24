@@ -1,7 +1,7 @@
 <?php
 $this->pageTitle='Способы оплаты';
 $this->breadcrumbs = array(
-    'Главная'=> Yii::app()->homeUrl,
+    Yii::t('yii','Main')=> Yii::app()->homeUrl,
     'Способы оплаты',
 );
 ?>

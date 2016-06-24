@@ -1,7 +1,7 @@
 <?php
 $this->pageTitle='О нас';
 $this->breadcrumbs = array(
-    'Главная'=> Yii::app()->homeUrl,
+    Yii::t('yii','Main')=> Yii::app()->homeUrl,
     'О нас',
 );
 ?>

@@ -1,8 +1,8 @@
 <?php
-$this->pageTitle='Заказ тура';
+$this->pageTitle='Замовлення туру';
 $this->breadcrumbs = array(
     Yii::t('yii','Main')=> Yii::app()->homeUrl,
-    'Заказ тура',
+    'Замовлення туру',
 );
 $tourType = "";
 switch($tour->type){
@@ -21,14 +21,11 @@ switch($tour->type){
 }
 ?>
 <div class="container">
-    <form action="/tours/confirm/" method="post" id="fwork" onsubmit="return submit_input_data();">
-        <input type="hidden" name="OrderForm[ordered_places]" id="ordered_places" value="">
-        <input type="hidden" name="OrderForm[tour_id]" id="tour_id" value="<?=$tour->id?>">
-        <input type="hidden" name="OrderForm[trip_id]" id="trip_id" value="<?=$trip->id?>">
-        <input type="hidden" name="YII_CSRF_TOKEN" value="<?=Yii::app()->request->csrfToken?>">
-<?  if ($tour->type == 'bus') { ?>
-        <input type="hidden" id="tour_bus" value="1">
-<? } ?>
+    <form action="/tours/order/confirm/" method="post" id="fwork" onsubmit="return submit_input_data();">
+        <input type="hidden" name="tour_id" id="tour_id" value="<?=$tour->id?>">
+        <input type="hidden" name="trip_id" id="trip_id" value="<?=$trip->id?>">
+        <input type="hidden" name="ordered_places" id="ordered_places" value="">
+
         <div class="sampleTour">
         <div class="descriptionCol">
             <div class="caption">
@@ -54,12 +51,12 @@ switch($tour->type){
                     $labelColor = 'dateGreen';
                 $otherDates = $trip->otherDates();
                 ?>
-                <em>Дата заезда:</em> <span class="label label-date <?=$labelColor?>"><?=$trip->selfDate()?></span>
-                <? if ($otherDates) {?><div class="dateSelectionBut" id="dateSelectionBut">Выбрать другую</div><? } ?>
+                <em>Дата заїзду:</em> <span class="label label-date <?=$labelColor?>"><?=$trip->selfDate()?></span>
+                <? if ($otherDates) {?><div class="dateSelectionBut" id="dateSelectionBut">Обрати іншу</div><? } ?>
             </div>
             <div class="dateSelection">
                 <?php
-                    foreach($otherDates as $tripDate){
+                    foreach($trip->otherDates() as $tripDate){
                         $freeSeats = $tripDate->freeSeatsCount();
                         $selfDate = $tripDate->selfDate();
                         if ($tripDate->freeSeatsCount() < 20)
@@ -71,77 +68,72 @@ switch($tour->type){
                 ?>
             </div>
             <div class="date busPlaces clearfix">
-                <em>Свободных мест в автобусе:</em><em><?=$trip->freeSeatsCount()?></em>
+                <em>Вільних місць в автобусі:</em><em><?=$trip->freeSeatsCount()?></em>
             </div>
         </div>
     </div>
     <div class="passportForm">
-        <h4>введите контактные данные</h4>
-        <table class="passportTbl">
-            <tr>
-                <td class="form"><input name="OrderForm[fio]" type="text" placeholder="Фамилия Имя Отчество" value=""></td>
-                <td class="form"><input name="OrderForm[email]" type="email" placeholder="E-mail" value=""></td>
-                <td class="form"><input name="OrderForm[phone]" type="text" placeholder="Контактный номер" value=""></td>
-            </tr>
-        </table>
         <div class="caption clearfix">
-            <h4>введите Данные туристa</h4>
             <div class="selectCol">
-                <select id="users_cnt" name="OrderForm[users_cnt]">
+                <select id="users_cnt" name="users_cnt">
                     <option value="1" selected>1 турист</option>
                     <option value="2" >2 туриста</option>
                     <option value="3" >3 туриста</option>
                     <option value="4" >4 туриста</option>
-                    <option value="5" >5 и более туристов</option>
+                    <option value="5" >5 и більше туристів</option>
                 </select>
+            </div>
+            <h4>введіть Данні туристa</h4>
+            <div class="msg">
+                <span class="alerter">&lt; ! &gt;</span> Усі поля обов'язкові для заповнення
             </div>
         </div>
 
         <table class="passportTbl" id="users_lt5">
             <tr>
-                <th>Ф.И.О.</th>
-                <th>Дата рождения</th>
+                <th>П.І.Б.</th>
+                <th>Дата нарождения</th>
                 <th></th>
             </tr>
 
             <tr id="user1">
-                <td class="form td_fio"><input name="OrderForm[fio_1]" id="fio_1" type="text" placeholder="Фамилия Имя Отчество" value=""></td>
-                <td class="form td_birthday"><input name="OrderForm[birthday_1]" id="birthday_1" class="birthday" type="text" placeholder="дд.мм.гггг" value=""></td>
+                <td class="form td_fio"><input name="fio_1" id="fio_1" type="text" placeholder="Прізвище Ім'я По батькові" value=""></td>
+                <td class="form td_birthday"><input name="birthday_1" id="birthday_1" class="birthday" type="text" placeholder="дд.мм.рррр" value=""></td>
                 <td class="form td_icon"><i class="icon-trash" id="icon-trash-1" style="display:none;"></i></td>
             </tr>
 
             <tr id="user2" style="display:none;">
-                <td class="form td_fio"><input name="OrderForm[fio_2]" id="fio_2" type="text" placeholder="Фамилия Имя Отчество" value=""></td>
-                <td class="form td_birthday"><input name="OrderForm[birthday_2]" id="birthday_2" class="birthday" type="text" placeholder="дд.мм.гггг" value=""></td>
+                <td class="form td_fio"><input name="fio_2" id="fio_2" type="text" placeholder="Прізвище Ім'я По батькові" value=""></td>
+                <td class="form td_birthday"><input name="birthday_2" id="birthday_2" class="birthday" type="text" placeholder="дд.мм.рррр" value=""></td>
                 <td class="form td_icon"><i class="icon-trash" id="icon-trash-2" style="display:none;"></i></td>
             </tr>
 
             <tr id="user3" style="display:none;">
-                <td class="form td_fio"><input name="OrderForm[fio_3]" id="fio_3" type="text" placeholder="Фамилия Имя Отчество" value=""></td>
-                <td class="form td_birthday"><input name="OrderForm[birthday_3]" id="birthday_3" class="birthday" type="text" placeholder="дд.мм.гггг" value=""></td>
+                <td class="form td_fio"><input name="fio_3" id="fio_3" type="text" placeholder="Прізвище Ім'я По батькові" value=""></td>
+                <td class="form td_birthday"><input name="birthday_3" id="birthday_3" class="birthday" type="text" placeholder="дд.мм.рррр" value=""></td>
                 <td class="form td_icon"><i class="icon-trash" id="icon-trash-3" style="display:none;"></i></td>
             </tr>
 
             <tr id="user4" style="display:none;">
-                <td class="form td_fio"><input name="OrderForm[fio_4]" id="fio_4" type="text" placeholder="Фамилия Имя Отчество" value=""></td>
-                <td class="form td_birthday"><input name="OrderForm[birthday_4]" id="birthday_4" class="birthday" type="text" placeholder="дд.мм.гггг" value=""></td>
+                <td class="form td_fio"><input name="fio_4" id="fio_4" type="text" placeholder="Прізвище Ім'я По батькові" value=""></td>
+                <td class="form td_birthday"><input name="birthday_4" id="birthday_4" class="birthday" type="text" placeholder="дд.мм.рррр" value=""></td>
                 <td class="form td_icon"><i class="icon-trash" id="icon-trash-4" style="display:none;"></i></td>
             </tr>
 
         </table>
 
         <div class="groupContent" id="users_gt5" style="display:none;">
-            <div class="alert alert-info">
-                <p>
-                    Для заказа группового тура необходимо отправить заявку менеджеру с указанием количества человек и их данными: ФИО, дата рождения.
+            <div class="importantNotice">
+                <p class="cnt">
+                    Для замовлення групового туру необхідно відправити заявку менеджеру із зазначенням кількості осіб і їх даними: ПІБ, дата народження.
                 </p>
             </div>
-            <textarea name="OrderForm[msg]" id="msg"  rows="8" cols="60" placeholder="Ваше сообщение..."></textarea>
+            <textarea name="msg" id="msg"  rows="8" cols="60" placeholder="Ваше повідомлення..."></textarea>
         </div>
+
     </div>
-    <?  if ($tour->type == 'bus') { ?>
     <div class="bus-map">
-        <h4>Выберите места в автобусе</h4>
+        <h4>Выберіть місця в автобусі</h4>
         <!-- empty, booked, reserve, choice-->
         <div class="busWrapper">
             <div class="bus-scroll">
@@ -239,6 +231,7 @@ switch($tour->type){
                         <div class="busRow rowSeat" id="2RI"></div>
                         <div class="busRow rowSeat" id="2RW"></div>
                     </div>
+
                     <div class="busCol " id="row-1">
                         <div class="busRow rowSeat" id="1LW"></div>
                         <div class="busRow rowSeat" id="1LI"></div>
@@ -246,6 +239,7 @@ switch($tour->type){
                         <div class="busRow rowSeat" id="1RI"></div>
                         <div class="busRow rowSeat" id="1RW"></div>
                     </div>
+
                     <div class="busCol busFront exitCol"></div>
                 </div>
             </div>
@@ -272,23 +266,22 @@ switch($tour->type){
         </div>
         <div class="msg">
             <p>
-                Компания оставляет за собой право пересаживать клиентов в зависимости от конкретного типа автобуса, количества и расположения мест, дверей, туалета, миникухни и др. особенностей модуляции внутреннего оснащения каждого конкретного автобуса.
+                Компанія залишає за собою право пересаджувати клієнтів в залежності від конкретного типу автобуса, кількості і розташування місць, дверей, туалету, мінікухні і ін. Особливостей модуляції внутрішнього оснащення кожного конкретного автобуса.
             </p>
         </div>
-        <?  } ?>
     </div>
     <div class="row" id="messageBlock">
         <div class="col-sm-12">
             <div class="passportForm">
                 <div class="groupContent">
-                    <textarea name="OrderForm[message]" id="message" rows="4" cols="60" placeholder="Здесь Вы можете оставить сообщение менеджеру..."></textarea>
+                    <textarea name="message" id="message" rows="4" cols="60" placeholder="Тут Ви можете залишити повідомлення менеджеру..."></textarea>
                 </div>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-12 t-a_c">
-            <button class="button button-rounded button-default button-big" id="orderButton">ОТПРАВИТЬ ЗАКАЗ</button>
+            <button class="button button-rounded button-default button-big" id="orderButton">ВІДПРАВИТИ ЗАМОВЛЕННЯ</button>
         </div>
     </div>
 </div>
@@ -434,82 +427,7 @@ switch($tour->type){
            set_place(value, 'reserve2');
        });
     }
-    function _get_birthdays(cnt) {
-        var birthdays = new Array(cnt);
-        $('#users_lt5 [id^=birthday]:visible').each(function(index) {
-             var date = $(this).val();
-             birthdays[index] = (date && date.length>0) ? getAge(date) : '35';
-        });
-        return birthdays;
-    }
-
-    function get_input_data(cnt) {
-        if (cnt<5) {
-            if ($('#tour_bus').val() == 1) {
-                var ordered_places = collect_choices();
-                $('#ordered_places').val(ordered_places.join(','));
-            }
-            var arr = new Array();
-            $('#users_lt5 [id^=user]:visible').each(function(index) {
-                arr.push($(this).attr('id'));
-            });
-            if (arr.length) {
-                $('#users_ids').val(arr.join());
-            }
-            $('#msg').val('');
-        } else {
-            $('#ordered_places').val('');
-            $('#users_ids').val('');
-            $('#message').val('');
-        }
-    }
-    function validate_childs(cnt) {
-        var childs_flag = false;
-        var ages = _get_birthdays(cnt);
-        for (var i=0; i<cnt; i++){
-            if (ages[i] && ages[i]<18 && ages[i]>=0) {
-                childs_flag = true;
-            }
-        }
-        return childs_flag;
-    }
-    function validate_input_data(cnt) {
-        var flag = true;
-        if (cnt<5) {
-            var fields = ['fio','birthday'];
-            jQuery.each(fields, function() {
-                $('#users_lt5 [id^='+this+']:visible').each(function(index) {
-                    var status = set_status_input($(this));
-                    if (status == false) flag = false;
-                });
-            });
-        } else {
-            if ($('#msg:visible')) {
-                if ($('#msg').val()=='') {
-                        flag = false;
-                }
-            }
-        }
-        if (flag == false)
-            alert('Корректно заполните данные туриста! Поля отмечены красным цветом.');
-        return flag;
-    }
-
-    function submit_input_data() {
-        var cnt = $('#users_cnt').val();
-        get_input_data(cnt);
-        var flag = validate_input_data(cnt);
-        if (flag == true) {
-            var childs_flag = validate_childs(cnt);
-            if ( childs_flag == true && $('#read_rules').val() == 0) {
-                if (childs_flag == true) $('#childs_rules').show();
-                return false;
-            }
-        }
-        return flag;
-    }
-
-    $(document).ready( function(){
+   $(document).ready( function(){
         draw_bus();
         $('.empty').click(function() {
               orderplace($(this).attr('id'));
@@ -518,13 +436,15 @@ switch($tour->type){
         $('.icon-trash').click(del_user_str);
         $('.dateSelection').hide();
         $('#dateSelectionBut').click(show_other_dates);
-        $('#users_lt5 .birthday').inputmask(\"dd.mm.yyyy\",{\"placeholder\" : \"дд.мм.гггг\", \"clearIncomplete\": true, yearrange: { minyear: 1916, maxyear: 2015 } });
+        $('#users_lt5 .birthday').inputmask(\"dd.mm.yyyy\",{\"placeholder\" : \"дд.мм.рррр\", \"clearIncomplete\": true, yearrange: { minyear: 1916, maxyear: 2015 } });
 
-        $('#users_lt5 input[type=text]').focusout(function() {
-            set_status_input($(this));
-        });
-        $('#users_lt5 input[type=text]').keyup(function() {
-            set_status_input($(this));
-        });
-    });
+         var ordered_places = $('#ordered_places').val();
+         set_places_status(ordered_places, 'choice2');
+         $('#users_lt5 input[type=text]').focusout(function() {
+             set_status_input($(this));
+         });
+         $('#users_lt5 input[type=text]').keyup(function() {
+             set_status_input($(this));
+         });
+   });
 ", CClientScript::POS_END);

@@ -3,5 +3,5 @@
 	<div class="news-item-inner">
         <?php echo $data->text;?>
     </div>
-    <a href="/post/<?php echo CHtml::encode($data->url);?>" class="detail-link"><span></span><?php echo Yii::t('yii', 'details');?></a>
+    <a href="/post/<?php echo CHtml::encode($data->url);?>" class="detail-link"><span></span><?=Yii::t('yii', 'details...');?></a>
 </div>

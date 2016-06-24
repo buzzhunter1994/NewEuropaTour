@@ -1,4 +1,15 @@
-
+<?php
+$this->pageTitle=Yii::t('yii','Main');
+?>
+<?php if(Yii::app()->user->hasFlash('order')): ?>
+    <div class="container">
+        <br />
+        <br />
+        <div class="alert alert-success">
+            <?php echo Yii::app()->user->getFlash('order'); ?>
+        </div>
+    </div>
+<?php endif; ?>
 <div class="block">
 	<div class="container">
 		<div class="row">
@@ -7,35 +18,16 @@
 					<h2 class="caption-red styled-header">NewEuroTour рекомендует</h2>
 				</header>
 				<div class="row">
-					<div class="rec-item col-lg-6 col-md-6">
-						<h3>SP6: Европейский экспресс + 5 ночей на море в Испании, <span class="price">12 964 750 руб.</span></h3>
-						<p>У Вас отпуск всего две недели и очень хочется в автобусный тур с отдыхом в Испании? Мы подготовили решение! Европейский экспресс домчит вас до солнечного Ллорет де Мара по классическому маршруту через Берлин, Амстердам и Париж и предоставит возможность погрузиться в отдых. Вам останется лишь наслаждаться теплым морем, изумительными пейзажами и динамичной жизнью наполненного энергией курортного городка. На обратном пути экспресс промчится, дав Вам возможность полюбоваться природными красотами в сочетании с богатой историей Средиземноморского региона. А в конце путешествия не пропустите свой бокал свежесваренного пива на его исторической родине!</p>
-						<span class="desc">Ближайший выезд: <span class="date">24.05.2016</span></span>
-					</div>
-					<div class="rec-item col-lg-6 col-md-6">
-						<h3>SP6: Европейский экспресс + 5 ночей на море в Испании, <span class="price">12 964 750 руб.</span></h3>
-						<p>У Вас отпуск всего две недели и очень хочется в автобусный тур с отдыхом в Испании? Мы подготовили решение! Европейский экспресс домчит вас до солнечного Ллорет де Мара по классическому маршруту через Берлин, Амстердам и Париж и предоставит возможность погрузиться в отдых. Вам останется лишь наслаждаться теплым морем, изумительными пейзажами и динамичной жизнью наполненного энергией курортного городка. На обратном пути экспресс промчится, дав Вам возможность полюбоваться природными красотами в сочетании с богатой историей Средиземноморского региона. А в конце путешествия не пропустите свой бокал свежесваренного пива на его исторической родине!</p>
-						<span class="desc">Ближайший выезд: <span class="date">24.05.2016</span></span>
-					</div>
-					<div class="rec-item col-lg-6 col-md-6">
-						<h3>SP6: Европейский экспресс + 5 ночей на море в Испании, <span class="price">12 964 750 руб.</span></h3>
-						<p>У Вас отпуск всего две недели и очень хочется в автобусный тур с отдыхом в Испании? Мы подготовили решение! Европейский экспресс домчит вас до солнечного Ллорет де Мара по классическому маршруту через Берлин, Амстердам и Париж и предоставит возможность погрузиться в отдых. Вам останется лишь наслаждаться теплым морем, изумительными пейзажами и динамичной жизнью наполненного энергией курортного городка. На обратном пути экспресс промчится, дав Вам возможность полюбоваться природными красотами в сочетании с богатой историей Средиземноморского региона. А в конце путешествия не пропустите свой бокал свежесваренного пива на его исторической родине!</p>
-						<span class="desc">Ближайший выезд: <span class="date">24.05.2016</span></span>
-					</div>
-					<div class="rec-item col-lg-6 col-md-6">
-						<h3>SP6: Европейский экспресс + 5 ночей на море в Испании, <span class="price">12 964 750 руб.</span></h3>
-						<p>У Вас отпуск всего две недели и очень хочется в автобусный тур с отдыхом в Испании? Мы подготовили решение! Европейский экспресс домчит вас до солнечного Ллорет де Мара по классическому маршруту через Берлин, Амстердам и Париж и предоставит возможность погрузиться в отдых. Вам останется лишь наслаждаться теплым морем, изумительными пейзажами и динамичной жизнью наполненного энергией курортного городка. На обратном пути экспресс промчится, дав Вам возможность полюбоваться природными красотами в сочетании с богатой историей Средиземноморского региона. А в конце путешествия не пропустите свой бокал свежесваренного пива на его исторической родине!</p>
-						<span class="desc">Ближайший выезд: <span class="date">24.05.2016</span></span>
-					</div>
+                    <?php $this->widget('application.components.widgets.RecommendTours'); ?>
 				</div>
 			</div>
 			<div class="col-lg-3 col-md-4">
 				<div class="subscribe-block">
-                    <header><h3>Подписка на рассылку</h3></header>
-                    <input type="text" placeholder="Ваш E-Mail">
-                    <input type="text" placeholder="Имя">
-                    <input type="text" placeholder="Город">
-                    <button class="btn btn-block">Подписаться</button>
+                    <header><h3><?=Yii::t('yii','Subscribe to Newsletter')?></h3></header>
+                    <input type="text" placeholder="<?=Yii::t('yii','email')?>">
+                    <input type="text" placeholder="<?=Yii::t('yii','name')?>">
+                    <input type="text" placeholder="<?=Yii::t('yii','city')?>">
+                    <button class="btn btn-block"><?=Yii::t('yii','Subscribe')?></button>
 				</div>
 
                 <div class="hidden-sm hidden-xs">
@@ -51,38 +43,7 @@
         <h2>Сезон 2016</h2>
     </header>
     <div class="row">
-        <div class="col-sm-6 col-md-3 col-lg-3">
-            <div class="tour-thumb">
-                <img src="http://dummyimage.com/130x130/3069b3/fff.png" class="img-responsive img-circle" alt="Responsive image">
-                <h3 class="styled-header">Отдых на море!</h3>
-                <p>Комфортные экскурсионные туры по Европе с отдыхом на море в Италии, Испании и Черногории</p>
-                <a class="btn-yellow btn-block" href="#" role="button">Подробнее</a>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3">
-            <div class="tour-thumb">
-                <img src="http://dummyimage.com/130x130/3069b3/fff.png" class="img-responsive img-circle" alt="Responsive image">
-                <h3 class="styled-header">Отдых на море!</h3>
-                <p>Комфортные экскурсионные туры по Европе с отдыхом на море в Италии, Испании и Черногории</p>
-                <a class="btn-yellow btn-block" href="#" role="button">Подробнее</a>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3">
-            <div class="tour-thumb">
-                <img src="http://dummyimage.com/130x130/3069b3/fff.png" class="img-responsive img-circle" alt="Responsive image">
-                <h3 class="styled-header">Отдых на море!</h3>
-                <p>Комфортные экскурсионные туры по Европе с отдыхом на море в Италии, Испании и Черногории</p>
-                <a class="btn-yellow btn-block" href="#" role="button">Подробнее</a>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-3 col-lg-3">
-            <div class="tour-thumb">
-                <img src="http://dummyimage.com/130x130/3069b3/fff.png" class="img-responsive img-circle" alt="Responsive image">
-                <h3 class="styled-header">Отдых на море!</h3>
-                <p>Комфортные экскурсионные туры по Европе с отдыхом на море в Италии, Испании и Черногории</p>
-                <a class="btn-yellow btn-block" href="#" role="button">Подробнее</a>
-            </div>
-        </div>
+        <?php $this->widget('application.components.widgets.LastTours'); ?>
     </div>
 </div>
 
@@ -162,3 +123,12 @@
         </article>
     </div>
 </div>
+
+<? Yii::app()->clientScript->registerScript('javascript', "
+    var maxheight = 0;
+    $(\".descriptionTour\").each(function() {
+        if($(this).height() > maxheight) { maxheight = $(this).height(); }
+    });
+    $(\".descriptionTour\").height(maxheight);
+
+", CClientScript::POS_READY);

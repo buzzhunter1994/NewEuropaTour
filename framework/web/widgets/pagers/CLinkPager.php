@@ -22,8 +22,8 @@ class CLinkPager extends CBasePager
 	const CSS_PREVIOUS_PAGE='previous';
 	const CSS_NEXT_PAGE='next';
 	const CSS_INTERNAL_PAGE='page';
-	const CSS_HIDDEN_PAGE='hidden';
-	const CSS_SELECTED_PAGE='selected';
+	const CSS_HIDDEN_PAGE='disabled';
+	const CSS_SELECTED_PAGE='active';
 
 	/**
 	 * @var string the CSS class for the first page button. Defaults to 'first'.
@@ -119,7 +119,7 @@ class CLinkPager extends CBasePager
 		if(!isset($this->htmlOptions['id']))
 			$this->htmlOptions['id']=$this->getId();
 		if(!isset($this->htmlOptions['class']))
-			$this->htmlOptions['class']='yiiPager pagination';
+			$this->htmlOptions['class']='pagination';
 	}
 
 	/**
@@ -186,8 +186,14 @@ class CLinkPager extends CBasePager
 	protected function createPageButton($label,$page,$class,$hidden,$selected)
 	{
 		if($hidden || $selected)
+		{
 			$class.=' '.($hidden ? $this->hiddenPageCssClass : $this->selectedPageCssClass);
-		return '<li class="'.$class.'">'.CHtml::link($label,$this->createPageUrl($page)).'</li>';
+		}
+		if($hidden || $selected)
+			$return = '<li class="'.$class.'"><span>'.$label.'</span></li>';
+		else
+			$return = '<li class="'.$class.'">'.CHtml::link($label,$this->createPageUrl($page)).'</li>';
+		return $return;
 	}
 
 	/**

@@ -4,6 +4,7 @@ class Trips extends CActiveRecord
 	const SEAT_RESERVED = 1;
 	const SEAT_BUSY = 2;
 	private $seats;
+	public $description;
 	public function tableName()
 	{
 		return '{{trips}}';
@@ -23,6 +24,15 @@ class Trips extends CActiveRecord
 		return array(
 			'tour' => array(self::BELONGS_TO, 'Tours', 'tour_id'),
 		);
+	}
+	protected function afterFind()
+	{
+		parent::afterFind();
+		$lang = Yii::app()->language;
+		$otherLang = array_filter(Yii::app()->params['languages'], function($k) {
+			return $k != Yii::app()->language;
+		}, ARRAY_FILTER_USE_KEY);
+		$this->description = $this['description_'.$lang]?$this['description_'.$lang]:$this['description_'.key($otherLang)];
 	}
 	public function attributeLabels()
 	{

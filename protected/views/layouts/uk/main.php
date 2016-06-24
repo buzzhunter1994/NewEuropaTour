@@ -50,8 +50,8 @@
                             <li class="dropdown"><a href="#">Про Компанію <span class="caret"></span></a>
                                 <ul>
                                     <li><a href="/news">Новини</a></li>
-                                    <li><a href="/site/reviews">Відгуки</a></li>
-                                    <li><a href="/site/about">Про нас</a></li>
+                                    <li><a href="/reviews">Відгуки</a></li>
+                                    <li><a href="/about">Про нас</a></li>
                                     <li><a href="/site/contact">Контакти</a></li>
                                 </ul>
                             </li>
@@ -71,34 +71,35 @@
             {
             ?>
             <div class="row">
-                <div class="col-lg-8 col-md-8 col-sm-12 hidden-xs hidden-sm">
+                <div class="col-lg-9 col-md-8 hidden-xs hidden-sm">
                     <div id="slider">
                         <div>
                             <a href="#"><img src="http://i.ytimg.com/vi/TRWRX3_AuzA/maxresdefault.jpg" alt="" /></a>
                             <div class="caption">
                                 <div class="title">
-                                    <a href="#">Франция – страна романтических пейзажей и бесценных произведений искусства!</a>
-                                </div>Полный каталог экскурсионных автобусных туров во Францию 2016.
+                                    <a href="#">Франція - країна романтичних пейзажів і безцінних творів мистецтва!</a>
+                                </div>Повний каталог екскурсійних автобусних турів до Франції 2016.
                             </div>
                         </div>
                         <div>
                             <a href="#"><img src="http://wallpaperstrend.com/wp-content/uploads/Architecture/Architecture01/hd-wallpaper-hd.jpeg" alt="" /></a>
                             <div class="caption">
                                 <div class="title">
-                                    <a href="#">Франция – страна романтических пейзажей и бесценных произведений искусства!</a>
-                                </div>Полный каталог экскурсионных автобусных туров во Францию 2016.
+                                    <a href="#">Франція - країна романтичних пейзажів і безцінних творів мистецтва!</a>
+                                </div>Повний каталог екскурсійних автобусних турів до Франції 2016.
                             </div>
                         </div>
                     </div>
+                    <div class="sliderHot"><span>Горячие предложения</span></div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="col-lg-3 col-md-4 col-sm-12">
                     <div class="tour-search">
-                        <h3>Быстрый подбор туров</h3>
+                        <h3>Швидкий підбір турів</h3>
                         <form method="GET" name="search_tours" id="search_tours" action="/tours/search/" class="tour-search-form">
-                            <input type="hidden" name="sort" id="sort" value="date">
+
                             <?php $this->widget('application.components.widgets.ToursFilter'); ?>
                             <br />
-                            <a href="javascript:void(0);" class="search-tour-btn" onClick="do_search_tours();">Показать предложения</a>
+                            <a href="javascript:void(0);" class="search-tour-btn" onclick="return do_search_tours();"><?=Yii::t('yii','show offers')?></a>
                         </form>
                     </div>
                 </div>
@@ -120,7 +121,7 @@
 </div>
 <footer class="footer">
     <div class="container">
-        <p class="pull-left footer-text">&copy; <?= date('Y') ?> ООО "NEWEUROTOUR".<br />Все права защищены. Свидетельство государственной регистрации № 800001036 от 28.01.2014.</p>
+        <p class="pull-left footer-text">&copy; <?= date('Y') ?> ООО "NEWEUROTOUR".<br />Всі права захищені. Свідоцтво про державну реєстрацію № 800001036 від 28.01.2014.</p>
         <p class="pull-right">
             <a class="soc-icon tw-icon" href="#"></a>
             <a class="soc-icon vk-icon" href="#"></a>
@@ -137,12 +138,6 @@
         </div>
     </div>
 </div>
-<?php
-//Yii::app()->clientScript->registerCoreScript('jquery');
-$cssCoreUrl = Yii::app()->clientScript->getCoreScriptUrl();
-//Yii::app()->clientScript->registerScriptFile($cssCoreUrl . '/jui/js/jquery-ui.min.js', CClientScript::POS_HEAD);
-//Yii::app()->clientScript->registerCssFile($cssCoreUrl . '/jui/css/base/jquery-ui.css');
-?>
 <script src="/js/jquery.bxslider.min.js"></script>
 <script src="/js/jquery.inputmask.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>
